@@ -1,0 +1,379 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+
+
+body {
+    background-color: #edefee;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 3rem;
+}
+
+/*Search btn*/
+
+.container{
+    display:flex;
+    justify-content:space-between;
+}
+
+.search{
+    position: relative;
+    height: 50px;
+}
+.search input{
+    background-color: #edefee;
+    border: 0;
+    font-size: 14px;
+    /*padding: 15px;*/
+    height: 25px;
+    width: 20px;
+    transition: width 0.3s ease;
+    caret-color: #81d8d0 ;
+    outline: none; 
+}
+.btn1{
+    background-color: #edefee;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn1:focus,
+.input:focus{
+    outline: none;
+}
+.search.active input{
+    width: 190px;
+}
+.search.active .btn1{
+    transform: translate(198px);
+}
+.search i:hover{
+    color: #81d8d0;
+}
+
+/*Shopping cart*/
+
+.cart{
+    display: flex;
+    /* background-color: #0d8348; */
+    padding: 7px 10px;
+    align-items: center;
+    
+}
+
+.bag{
+    background-color: transparent;
+    border: 0 ;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.bag i:hover{
+    color: #81d8d0;
+}
+
+.bag i::after{
+    content: '2';
+    font-size: 9px;
+    width: 15px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: -20px;
+    right: 20%;
+    background-color: red;
+    border-radius: 4rem;
+}
+.container1{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.sidebar{
+    width: 17%;
+    height: 260px;
+    border-radius: 5px;
+    background-color: rgb(82, 138, 138);
+    margin-left: 73.5rem;
+    padding: 15px;
+    text-align: center;
+    position: absolute;
+}
+.hide{
+    display: none;
+}
+
+.calcul{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #81d8d0;
+}
+
+/*Logo*/
+
+.logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+    width: 400px;
+}
+.fa-magnifying-glass{
+    height: 20px;
+}
+
+/*nav bar*/
+nav ul {
+    list-style: none;
+    text-align: center;
+    border-radius: 15px;
+    height: 35px;
+    margin-top: 30px;
+}
+
+nav li {
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-right: 5rem;
+}
+
+li a {
+    color: rgb(69, 68, 68);
+    text-decoration: none;
+    float: none;
+}
+
+li a:hover {
+    text-decoration: underline #81d8d0;
+}
+
+/*Sub nav bar*/
+
+.subnav{
+    display: none;
+    height: 230px;
+}
+
+nav ul li:hover .subnav {
+    display: block;
+    position: absolute;
+    background-color: #edefee;
+    margin-left: -15px;
+    border-radius: 9px;
+}
+.subnav ul {
+    padding: 0px;
+}
+.subnav p{
+   text-align: left;
+   margin-left: 15px;
+   font-size:large
+}
+nav ul li:hover .subnav ul li{
+    display: block;
+    margin: 10px;
+    width: 120px;
+    padding: 5px;
+    background: transparent;
+    text-align: left;
+}
+
+.subnav1{
+    display: none;
+    height: 230px;
+}
+
+nav ul li:hover .subnav1 {
+    display: block;
+    position: absolute;
+    background-color: #edefee;
+    margin-left: -15px;
+    border-radius: 9px;
+}
+.subnav1 ul {
+    padding: 0px;
+}
+nav ul li:hover .subnav1 ul li{
+    display: block;
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    background: transparent;
+    text-align: left;
+}
+
+/*main */
+
+.sectionOne {
+    background: url("img/1621541260-mixedcuff-thumb.jpg") no-repeat center center/cover;
+    border-radius: 15px;
+    height: 13rem;
+    display: flex;
+}
+
+.art1 {
+    width: fit-content;
+    margin: auto;
+    margin-top: 10rem;
+    transform: translateX(15deg);
+    transition: 5s;
+}
+
+/*div*/
+
+.div{
+    margin-top: 55px;
+}
+
+.div h2{
+    text-align: center;
+    font-size: 20px;
+}
+
+.div p{
+    text-align: center;
+    font-size: 15px;
+}
+    
+
+/*templates*/
+
+.art {
+    background-color: aqua;
+    display: flex;
+    align-content: center;
+
+}
+
+.sectionTwo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    align-content: center;
+
+}
+
+.template {
+    background-color: rgb(240, 247, 246);
+    width: 14.8rem;
+    height: 10rem;
+    border: 1px solid black;
+}
+
+.template img {
+    display: flex;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.template a{
+    margin-left: 5rem;
+    color: black;
+    text-decoration: none;
+}
+.template a:hover{
+    text-decoration: underline #81d8d0;
+}
+
+/*footer*/
+.footer{
+    background-color: rgba(221, 210, 149, 0.237);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    text-decoration-style: wavy;
+  
+}
+.contactArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+  
+  
+}
+.about li{
+    margin-top: 1rem;
+}
+.about a{
+    color: black;
+    font-size: medium;
+}
+.about a:hover{
+    text-decoration: underline #81d8d0;
+    cursor: pointer;
+}
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8rem;
+    padding-top: 1rem;
+}
+
+footer img {
+    width: 10rem;
+    height: auto;
+}
+
+/*Bracelets page*/
+.Bracelet{
+    background-color: palevioletred;
+}
+h2{
+    text-align: center;
+    font-size: 25px;
+}
+
+.Bracelet-pic{
+    height: 89rem;
+    background-color: #0d8348;
+}
+.Div1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  
+}
+#pic2{
+    height: 350px;
+
+}
+.item1{
+    border: 1px solid black;
+
+}
+.item1 p{
+    margin-top: 5px;
+    text-align: center;
+    height: 20px;
+    background-color: aqua;
+}
+
+.item1 button{
+    font-size: 15px;
+    margin-left: 95px;
+    margin-bottom: 5px;
+    
+}
+.item1 button:hover{
+    background-color: #81d8d0;
+}

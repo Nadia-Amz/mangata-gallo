@@ -35,3 +35,9 @@ bag.addEventListener('mouseleave',() =>{
         sidebar.inWindow=0
         sidebar.classList.add('hide')
     })
+
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", function(){
+        nav.classList.toggle ("sticky", this.window.scrollY > 0);
+    })

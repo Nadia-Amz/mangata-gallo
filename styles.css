@@ -2,13 +2,13 @@
     list-style: none;
     text-decoration: none;
     padding: 0;
+    margin: 0;
 }
 
 
 
 body {
     font-family: 'Raleway', sans-serif;
-    margin-top: 3rem;
 }
 
 /*Search btn*/
@@ -27,7 +27,7 @@ body {
 }
 .search input{
     display: none;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     border: 0;
     font-size: 14px;
     height: auto;
@@ -37,7 +37,7 @@ body {
     outline: none; 
 }
 .btn1{
-    background-color: rgb(255, 255, 255); 
+    background-color: transparent; 
     border: 0;
     cursor: pointer;
     font-size: 1.5rem;
@@ -105,7 +105,7 @@ body {
     height: 260px;
     border-radius: 5px;
     background-color: rgb(252, 252, 252);
-    margin-left: 73.5rem;
+    margin-left: 74.5rem;
     padding: 15px;
     text-align: center;
     backdrop-filter: blur(7px) ;
@@ -137,14 +137,29 @@ body {
 }
 .logo img {
     display: flex;
-    height: 2rem;
+    height: auto;
     max-width: 15rem;
+    margin-left: 1rem;
 }
 
 
 /*nav bar*/
 
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 100000; 
+    top: 0;
+    padding-top: 2rem;
+    transition: 0.6s;
+}
 
+.sticky{
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0px 0px 10px rgb(0 0 0/10%);
+    top: 0;
+}
 nav ul {
     list-style: none;
     text-align: center;
@@ -220,16 +235,18 @@ nav ul li:hover .subnav1 ul li{
 /*main */
 
 .sectionOne {
-    background: url("img/1621541260-mixedcuff-thumb.jpg") no-repeat center center/cover;
-    border-radius: 15px;
-    height: auto;
     display: flex;
+    background: url("img/1621541260-mixedcuff-thumb.jpg") no-repeat center center/cover;
+    /* border-radius: 15px; */
+    height: 100vh;
+    width: 100%;
+    margin-top: 6rem;
 }
 
 .art1 {
     width: fit-content;
     margin: auto;
-    margin-top: 10rem;
+    margin-bottom: 2rem;
     transform: translateX(15deg);
     transition: 2s;
 }

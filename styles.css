@@ -184,53 +184,77 @@ li a:hover {
 
 /*Sub nav bar*/
 
-.subnav,
-.subnav1{
+.subnav{
     display: none;
-    height: 230px; 
-}
-nav ul li:hover .subnav {
-    display: block;
     position: absolute;
-    background-color: white;
-    margin-left: -15px;
-    border-radius: 9px;
+    width: 100%;
+    height: auto; 
+    left: 0;
+    padding-top: 2rem;
+    padding: 25px 20px;
+}
+.row{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 100%;
+   height: auto;
+   background-color: #81d8d0;
+   padding: 25px 20px;
+   margin-right: 20rem;
+}
+
+.content:hover {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   
 }
-
-.subnav p{
-   text-align: left;
-   margin-left: 15px;
-   font-size:large
+.productsPic {
+    display: flex;
+    justify-content: space-between;
+    width: calc(25% - 30px);
 }
+
+.productsPic img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+nav ul li:hover .subnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2rem;
+    backdrop-filter: blur(7px) ;
+    background-color: rgba(255, 255, 255, 0.20);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
 nav ul li:hover .subnav ul li{
     display: block;
-    margin: 10px;
-    width: 120px;
+    width: 100%;
     padding: 5px;
     background: transparent;
-    text-align: left;    
-    
 }
 
-nav ul li:hover .subnav1 {
+/* nav ul li:hover .subnav1 {
     display: block;
     position: absolute;
     background-color: white;
-    margin-left: -15px;
-    border-radius: 9px;
+  
 }
 .subnav1 ul {
     padding: 0px;
 }
 nav ul li:hover .subnav1 ul li{
     display: block;
-    margin: 10px;
-    width: 200px;
+    width: 100%;
     padding: 5px;
     background: transparent;
-    text-align: left;
-}
+} */
 
 /*main */
 
@@ -289,7 +313,6 @@ nav ul li:hover .subnav1 ul li{
     background-color: rgb(240, 247, 246);
     width: 14.8rem;
     height: 10rem;
-    border: 1px solid black;
 }
 
 .template img {

@@ -1,11 +1,11 @@
-const search = document.querySelector(".search");
-const btn1 = document.querySelector(".btn1");
-const input = document.querySelector(".input");
+// const search = document.querySelector(".search");
+// const btn1 = document.querySelector(".btn1");
+// const input = document.querySelector(".input");
 
-btn1.addEventListener("click",() =>{
-    search.classList.toggle("active");
-    input.focus();
-})
+// btn1.addEventListener("click",() =>{
+//     search.classList.toggle("active");
+//     input.focus();
+// })
 
 const bag = document.querySelector(".fa-bag-shopping");
 const sidebar = document.querySelector(".sidebar");

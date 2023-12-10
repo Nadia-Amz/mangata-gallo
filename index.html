@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <title>Jewelry</title>
 </head>
 
@@ -26,12 +26,11 @@
                 <img src="img/Asset 2@3x.png">
             </div>
 
-                    <div class="content">
+            <div class="content">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Products.html">Products</a>
                         <div class="subnav">
-                            
                             <ul>
                                 <h1>View by category</h1>
                                 <li><a href="Necklaces.html">Necklaces</a></li>
@@ -82,13 +81,13 @@
                                 <li><a href="#">Women's watches</a></li>
                                 <li><a href="#">Men's watches</a></li>
                                 <li><a href="#">All watches</a></li>
-        
+
                             </ul>
                             <div class="line"></div>
 
                             <ul>
                                 <h1>Collections...</h1>
-                                <li><a href="#">M&G HardWear</a></li>        
+                                <li><a href="#">M&G HardWear</a></li>
                                 <li><a href="#">M&G Eternity</a></li>
                                 <li><a href="#">Atlas</a></li>
                             </ul>
@@ -105,7 +104,7 @@
                                 <li><a href="#">Rings for Women</a></li>
                                 <li><a href="#">Rings for Men</a></li>
                                 <li><a href="#">Matching rings</a></li>
-        
+
                             </ul>
                             <div class="line"></div>
 
@@ -120,57 +119,79 @@
                             </div>
                         </div>
                     </li>
-                   
+
                 </ul>
-            </div>  
-                <div class="cart">
+            </div>
 
-                    <div class="search">
-                        <input type="text" placeholder="Type to Search...">
-                        <ion-icon class= "bnt1" name="search"></ion-icon>
-                    </div>
+            <div class="cart">
 
-                    <div class="login">
-                        <ion-icon class= "user" name="person-circle-outline"></ion-icon>
-                    </div>
+                <div class="search">
+                    <input type="text" placeholder="Type to Search...">
+                    <ion-icon class="bnt1" name="search"></ion-icon>
+                </div>
 
-                    <ion-icon class= "like" name="heart-circle-outline"></ion-icon>
-                    <button class="bag"><i class="fa-solid fa-bag-shopping"></i></button>
-                    </div>
-                    
-                        <div class="form-box">
-                            <h1>Sign In</h1>
-                            <form action="login" method="post">
-                                <div class="sign-in">
-                                    <div class="-in">
-                                        <input type="text" placeholder="Email or phone number" required minlength="10" maxlength="25">
-                                    </div>
-                                    <div class="-in">
-                                        <input type="password" placeholder="Password" required minlength="8">
-                                    </div>
-                                </div>
-                                <div class="btn-">
-                                    <button type="submit">Sign In</button>
-                                </div>
-                            </form>
+                <div class="log-in">
+                    <ion-icon class="user" name="person-circle-outline"></ion-icon>
+                </div>
+                <div class="form-box">
+                    <form action="login" method="post">
+                        <div class="productsPic">
+                            <img src="img/log.png">
                         </div>
+                        <div class="sign-in">
+                            <h1>Sign In</h1>
+                            <div class="-in">
+                                <input type="text" placeholder="Email or phone number" required minlength="10" maxlength="25">
+                            </div>
+                            <div class="-in">
+                                <input type="password" placeholder="Password" required minlength="8">
+                            </div>
+                        <div class="option">
+                            <div class="check">
+                                <input type="checkbox" id="me" name="me" >
+                                <label for="me" class="label">Remember me</label>
+                            </div>
+                            <div class="a1">
+                                <a href="#">Need help?</a>
+                            </div>
+                        </div>
+                        <div class="parag">
+                            <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.<a href="#" class="learn">Learn
+                                    more.</a>
+                            <p>
+                        </div>
+                        <div class="btn-">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+        
+                    </form>
+                </div>
+
+                <div>
+                    <ion-icon class="like" name="heart-circle-outline"></ion-icon>
+                </div>
+
+                <div>
+                    <button class="bag"><i class="fa-solid fa-bag-shopping"></i></button>
+                </div>
+
             </div>
         </div>
+
+ 
+
         <div class="container1">
             <div class="sidebar hide">
-                <div class="mycart">
-                    <h3>My Cart</h3>
-                    <div id="cartitem">
-                        <p>Your cart is empty</p>
-                        <div class="calcul">
+                <h1>Your Shopping Cart</h1>
+                    <p>Your Cart Is Empty</p>
+                        <!-- <div class="calcul">
                             <p>Total</p>
                             <p id="total">$ 0.00</p>
-                        </div>
-                    </div>
-                </div>
+                        </div> -->
             </div>
         </div>
-      
+
     </nav>
 
     <main>
@@ -217,16 +238,16 @@
     </main>
 
     <footer>
-    
+
         <section class="containerFooter">
             <div>
                 <img src="img/Asset 1@3x.png">
             </div>
-            
+
             <div>
                 <p><i class="fa-regular fa-copyright"></i>M&G.2023 | All Rights Reserved</p>
             </div>
-    
+
             <div class="social">
                 <ul>
                     <li><a href="#facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
@@ -238,16 +259,16 @@
         </section>
 
         <div class="contactArea">
-           
+
             <section class="about">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About us</a></li>
-                <li><a href="#catalogues">Catalogues</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#address">Address</a></li>
-                <li><a href="#phone-number">Phone number</a></li>
-            </ul>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="#catalogues">Catalogues</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#address">Address</a></li>
+                    <li><a href="#phone-number">Phone number</a></li>
+                </ul>
             </section>
         </div>
     </footer>
@@ -257,4 +278,5 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>

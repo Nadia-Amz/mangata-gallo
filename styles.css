@@ -32,30 +32,26 @@ h1{
     align-items: center;
     cursor: pointer;
     border-radius: 30px;
-    padding: 7px 20px;
+    padding: 5px 15px;
 }
 .search input{
     background-color: transparent;
-    border: none;
+    border: 0;
     outline: none;
-    font-weight: 600;
+    font-weight: 500;
     width: 0;
     transition: 0.8s ease;
-    padding: 7px 20px;
+    padding: 5px 15px;
 }
 .search:hover input{
     width: 200px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
+    border: 1px solid black;
 }
 .bnt1{
     margin-right: 1rem;
     font-size: 1.4rem;
-}
-
-.search:hover ion-icon{
-    background-color: rgb(172, 132, 132);
-    border-radius: 20px;
 }
 
 
@@ -74,12 +70,7 @@ h1{
     font-size: 1.5rem;
     cursor: pointer;
 }
-.form-box{
-    display: none;
-}
-.login:hover .form-box{
-    display: block;
-}
+
 
 .bag{
     background-color: transparent;
@@ -99,35 +90,165 @@ h1{
     right: 20%;
     border-radius: 4rem;
 }
-.container1{
-    display: flex;
-    width: 100%;
-}
+
 .sidebar{
-    width: 17%;
-    height: 260px;
-    border-radius: 5px;
-    background-color: rgb(252, 252, 252);
-    margin-left: 74.5rem;
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    backdrop-filter: blur(7px) ;
-    background-color: rgba(255, 255, 255, 0.20);
-    border-radius: 16px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    width: 17%;
+    height: 400px;
+    background-color:#fff;
+    right: 0.5rem;
+    padding: 7px 10px;
     position: absolute;
-}
-.hide{
-    display: none;
+
 }
 
-.calcul{
+.hide{
+   display: none;
+  
+}
+
+
+/* .calcul{
     display: flex;
     justify-content: space-between;
     margin: 20px 0px;
     padding: 10px 0px;
     border-top: 1px solid #000000;
+} */
+
+/*LOGIN*/
+
+.form-box {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height:0;
+    left: 0;
+    top: 0;
+    display: none; 
+    transition: height 0.3s ease-in-out;
 }
+
+.log-in:hover + .form-box{
+    display: block;
+    height: 500px;
+    margin-top: 3.5rem;
+
+}
+
+.form-box h1 {
+    text-align: center;
+    font-size: larger;
+    color: black;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+}
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+}
+.-in{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    background-color: #3d3d3d;
+    padding: 10px 35px;
+    border-color: #3d3d3d;
+    font-size: medium;
+    outline: none;
+    border-radius: 10px;
+}
+
+input:focus:invalid {
+    border-bottom: 2px solid red;
+}
+
+.btn- {
+    padding: 10px 20px;
+    opacity: 0.7;
+}
+
+.btn- button {
+    text-align: center;
+    color: black;
+    background-color: #d9b99b;
+    font-size: medium;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 25px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.btn-:hover {
+    opacity: 1;
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.a1 a {
+    font-size: small;
+    color: black;
+}
+
+.a1 a:hover {
+    text-decoration: underline;
+}
+
+.check {
+    display: flex;
+    white-space: nowrap;
+}
+
+label {
+    font-size: small;
+    color: black;
+    margin-left: 1rem;
+}
+
+.parag p {
+    font-size: small;
+    color: #3d3d3d;
+}
+
+.learn {
+    font-size: small;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
 
 /*Logo*/
 
@@ -149,11 +270,11 @@ h1{
 /*nav bar*/
 
 nav {
+    background-color: #fff;
     position: fixed;
     width: 100%;
     z-index: 100000; 
-    top: 0;
-    padding-top: 2rem;
+    padding: 15px 5px ;
     transition: 0.6s;
 }
 
@@ -163,6 +284,8 @@ nav {
     box-shadow: 0px 0px 10px rgb(0 0 0/10%);
     top: 0;
 }
+
+
 nav ul {
     list-style: none;
     text-align: center;
@@ -192,7 +315,6 @@ li a:hover {
     width: 100%;
     height: 0;
     left: 0;
-    top: 2.5rem;
     visibility: hidden;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
@@ -207,7 +329,6 @@ li a:hover {
     flex: 1 0 20%;
     margin-left: 3rem;
     margin-right: 3rem;
-    padding: 5px 15px;
 }
 .subnav ul li a{
    display: flex;
@@ -226,7 +347,7 @@ li a:hover {
 
 .productsPic img {
     display: flex;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     margin-right: 5rem;
     width: 100%;
     height: auto;
@@ -239,7 +360,6 @@ nav ul li:hover .subnav {
     align-items: center;
     background-color: #fff;
     height: 400px;
-    margin-top: 2rem;
     visibility: visible;
 }
 
@@ -251,12 +371,14 @@ nav ul li:hover .subnav ul li{
     padding: 5px;
     margin-right: 0.5rem;
 }
-.line{
+
+
+.subnav .line{
     display: flex;
     border-left: 1px solid black;
     height: 30%;
     position:absolute;
-    left: 30%;
+    left: 26%;
     margin-top: 3rem;
 }
 
@@ -269,7 +391,7 @@ nav ul li:hover .subnav ul li{
     background: url("img/1621541260-mixedcuff-thumb.jpg") no-repeat center center/cover;
     height: 100vh;
     width: 100%;
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
 }
 
 .art1 {

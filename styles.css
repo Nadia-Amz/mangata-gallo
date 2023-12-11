@@ -34,6 +34,7 @@ h1{
     border-radius: 30px;
     padding: 5px 15px;
 }
+
 .search input{
     background-color: transparent;
     border: 0;
@@ -48,10 +49,28 @@ h1{
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
     border: 1px solid black;
+    color: black;
 }
 .bnt1{
+    position: relative;
     margin-right: 1rem;
     font-size: 1.4rem;
+}
+.bnt1::before{
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 60%; 
+    height: 60%; 
+    background-color: transparent; 
+    border-radius: 50%;
+    z-index: -1;
+    transition: background-color 0.3s ease-in-out;
+}
+.bnt1:hover::before{
+    background-color: #d9b99b;
 }
 
 
@@ -69,6 +88,41 @@ h1{
     margin-right: 2rem;
     font-size: 1.5rem;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.user::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; 
+    height: 70%; 
+    background-color: transparent; 
+    border-radius: 50%;
+    z-index: -1;
+    transition: background-color 0.3s ease-in-out;
+}
+.user:hover::before{
+    background-color: #d9b99b;
+
+}
+.like::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; 
+    height: 70%; 
+    background-color: transparent; 
+    border-radius: 50%;
+    z-index: -1;
+    transition: background-color 0.3s ease-in-out;
+}
+.like:hover::before{
+    background-color: #d9b99b;
 }
 
 
@@ -77,6 +131,8 @@ h1{
     border: 0 ;
     font-size: 1.3rem;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 .bag i::after{
@@ -124,19 +180,18 @@ h1{
 .form-box {
     background-color: #fff;
     position: absolute;
+    z-index: 2;
     width: 100%;
     height:0;
     left: 0;
-    top: 0;
-    display: none; 
+    top: 100%;
+    overflow: hidden;
     transition: height 0.3s ease-in-out;
 }
 
-.log-in:hover + .form-box{
-    display: block;
-    height: 500px;
-    margin-top: 3.5rem;
 
+.login-container:hover .form-box{
+    height: 500px;
 }
 
 .form-box h1 {
@@ -167,7 +222,7 @@ form{
 .-in{
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 50%;
     height: auto;
 }
 
@@ -178,6 +233,7 @@ input {
     padding: 10px 35px;
     border-color: #3d3d3d;
     font-size: medium;
+    color: white;
     outline: none;
     border-radius: 10px;
 }
@@ -213,21 +269,40 @@ input:focus:invalid {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 50%;
 }
 
-.a1 a {
-    font-size: small;
+.a1 a{
+    position: relative;
+    text-decoration: none;
     color: black;
+    font-size: small;
+
+}
+.a1 a:after {
+    content: "";
+    position: absolute;
+    background-color: #d9b99b;
+    font-size: small;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+
 }
 
-.a1 a:hover {
-    text-decoration: underline;
+.a1 a:hover:after {
+    width: 100%;
 }
 
 .check {
     display: flex;
     white-space: nowrap;
+}
+.check input{
+    accent-color: #d9b99b;
+
 }
 
 label {
@@ -246,7 +321,23 @@ label {
     color: black;
     font-weight: bold;
     cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
 
+.learn:after{
+    content: "";
+    position: absolute;
+    background-color: #d9b99b;
+    font-size: small;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+.learn:hover:after {
+    width: 100%;
 }
 
 
@@ -275,7 +366,6 @@ nav {
     width: 100%;
     z-index: 100000; 
     padding: 15px 5px ;
-    transition: 0.6s;
 }
 
 .sticky{
@@ -347,7 +437,6 @@ li a:hover {
 
 .productsPic img {
     display: flex;
-    /* margin-top: 3rem; */
     margin-right: 5rem;
     width: 100%;
     height: auto;

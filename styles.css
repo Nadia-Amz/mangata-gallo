@@ -8,7 +8,7 @@
 
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Mono';
     scroll-behavior: smooth;
 }
 h1{
@@ -32,29 +32,36 @@ h1{
     align-items: center;
     cursor: pointer;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 5px 15px; 
+    margin-right: 1rem;
+
 }
 
 .search input{
     background-color: transparent;
     border: 0;
     outline: none;
-    font-weight: 500;
+    font-size: small;
     width: 0;
-    transition: 0.8s ease;
+    transition: 0.8s ease-in-out;
     padding: 5px 15px;
+    visibility: hidden;
+}
+.search ::placeholder{
+    color: black;
 }
 .search:hover input{
-    width: 200px;
+    width: 150px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
     border: 1px solid black;
     color: black;
+    visibility: visible;
 }
 .bnt1{
     position: relative;
-    margin-right: 1rem;
     font-size: 1.4rem;
+    right: 0;
 }
 .bnt1::before{
     content: "";
@@ -127,44 +134,68 @@ h1{
 
 
 .bag{
-    background-color: transparent;
     border: 0 ;
     font-size: 1.3rem;
     cursor: pointer;
     position: relative;
     z-index: 1;
+    height: 2rem;
 }
 
-.bag i::after{
+.bag::before{
+    content: "";
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72%; 
+    height: 35%; 
+    background-color: black; 
+    border-radius: 5%;
+    z-index: -1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.sticky .bag:hover::before  {
+    background-color: #d9b99b; 
+  }
+
+.bag::after{
     content: '0';
     font-size: 9px;
+    font-weight: bolder;
     width: 15px;
     display: inline-block;
     text-align: center;
     position: relative;
-    top: -20px;
-    right: 20%;
-    border-radius: 4rem;
+    top: -45px;
+    left: 50%;
 }
 
-.sidebar{
+/* .sidebar{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 17%;
-    height: 400px;
-    background-color:#fff;
+    width: 20%;
+    height: 0;
+    backdrop-filter: blur(7px) ;
+    background-color: rgba(255, 255, 255, 0.20);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
     right: 0.5rem;
-    padding: 7px 10px;
+    top: 100%;
     position: absolute;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
 
 }
-
+.container1:hover .sidebar{
+    height: 400px;
+}
 .hide{
    display: none;
   
-}
+} */
 
 
 /* .calcul{
@@ -178,7 +209,9 @@ h1{
 /*LOGIN*/
 
 .form-box {
-    background-color: #fff;
+    backdrop-filter: blur(7px) ;
+    background-color: rgba(255, 255, 255, 0.20);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
     position: absolute;
     z-index: 2;
     width: 100%;
@@ -189,6 +222,10 @@ h1{
     transition: height 0.3s ease-in-out;
 }
 
+/* .login-container{
+    width: 10%;
+    margin-right: 1.5rem;
+} */
 
 .login-container:hover .form-box{
     height: 500px;
@@ -282,7 +319,7 @@ input:focus:invalid {
 .a1 a:after {
     content: "";
     position: absolute;
-    background-color: #d9b99b;
+    background-color: black;
     font-size: small;
     height: 1px;
     width: 0;
@@ -328,7 +365,7 @@ label {
 .learn:after{
     content: "";
     position: absolute;
-    background-color: #d9b99b;
+    background-color: black;
     font-size: small;
     height: 1px;
     width: 0;
@@ -340,6 +377,34 @@ label {
     width: 100%;
 }
 
+ /*wishlist*/
+
+.sidebar-container .Bar{
+    backdrop-filter: blur(7px) ;
+    background-color: rgba(255, 255, 255, 0.20);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+    z-index: 2;
+    width: 20%;
+    right: 0.5rem;
+    height: 0;
+    top: 100%;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+.wishlist-container:hover .Bar{
+    height: 400px;
+}
+
+/*cart-container*/
+
+.cart-container:hover .Bar{
+    height: 400px;
+}
 
 /*Logo*/
 
@@ -361,7 +426,7 @@ label {
 /*nav bar*/
 
 nav {
-    background-color: #fff;
+    background-color: transparent;
     position: fixed;
     width: 100%;
     z-index: 100000; 
@@ -383,7 +448,11 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-right: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    height: 3rem;
+    margin-top: 1.5rem;
+    text-align: center;
 }
 
 li a {
@@ -394,7 +463,7 @@ li a {
 }
 
 li a:hover {
-    opacity: 2;
+    opacity: 1;
     
 }
 
@@ -404,6 +473,7 @@ li a:hover {
     position: absolute;
     width: 100%;
     height: 0;
+    opacity: 0;
     left: 0;
     visibility: hidden;
     overflow: hidden;
@@ -442,13 +512,20 @@ li a:hover {
     height: auto;
     object-fit: cover;
 
+
 }
+
+
 nav ul li:hover .subnav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #fff;
+    backdrop-filter: blur(7px) ;
+    background-color: rgba(255, 255, 255, 0.20);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    top: 80%;
     height: 400px;
+    opacity: 1;
     visibility: visible;
 }
 
@@ -458,6 +535,7 @@ nav ul li:hover .subnav ul li{
     width: 100%;
     height: auto;
     padding: 5px;
+    margin-top: 0;
     margin-right: 0.5rem;
 }
 
@@ -473,11 +551,12 @@ nav ul li:hover .subnav ul li{
 
 
 
+
 /*main */
 
 .sectionOne {
     display: flex;
-    background: url("img/1621541260-mixedcuff-thumb.jpg") no-repeat center center/cover;
+    background: url("img/cover2.jpg") no-repeat center center/cover;
     height: 100vh;
     width: 100%;
     /* margin-top: 6rem; */
@@ -504,7 +583,7 @@ nav ul li:hover .subnav ul li{
 
 .div p{
     text-align: center;
-    font-size: 15px;
+    font-size: small;
 }
     
 

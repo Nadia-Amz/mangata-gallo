@@ -260,8 +260,19 @@ form{
     display: flex;
     justify-content: center;
     width: 50%;
-    height: auto;
+    max-height: 65px;
+    overflow: hidden;
+    transition: max-height 0.5s;
 }
+
+/* .-in span{
+    position: absolute;
+    right: 17rem;
+    top: 7rem;
+    font-size: medium;
+    color: red;
+    
+} */
 
 input {
     width: 100%;
@@ -295,6 +306,12 @@ input:focus:invalid {
     padding: 5px 25px;
     border-radius: 10px;
     margin-bottom: 2rem;
+    transition: background-color 1s;
+}
+
+.btn- button.disable{
+    background-color: #fff;
+    color: black;
 }
 
 .btn-:hover {

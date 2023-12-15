@@ -39,3 +39,24 @@
     window.addEventListener("scroll", function(){
         nav.classList.toggle ("sticky", this.window.scrollY > 0);
     })
+
+
+    let signinBtn = document.getElementById("signinBtn");
+    let signupBtn = document.getElementById("signupBtn");
+    let field = document.getElementById("field");
+    let title = document.getElementById("form-title");
+
+    signinBtn.onclick = function(){
+        field.style.maxHeight = "0";
+        title.innerHTML = "Sign In";
+        signupBtn.classList.add("disable");
+        signinBtn.classList.remove("disable");
+    }
+
+    signupBtn.onclick = function(){
+        field.style.maxHeight = "65px";
+        title.innerHTML = "Sign Up";
+        signupBtn.classList.remove("disable");
+        signinBtn.classList.add("disable");
+    }
+

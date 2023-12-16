@@ -60,3 +60,53 @@
         signinBtn.classList.add("disable");
     }
 
+    const form = document.getElementById("form");
+    const username = document.getElementById("contact-name");
+    const email = document.getElementById("contact-email");
+    const password = document.getElementById("contact-password");
+
+    signinBtn.addEventListener('click', (e) => {
+        console.log('Sign In button clicked');
+        e.preventDefault(); 
+        checkInputs();
+
+    });
+
+    signupBtn.addEventListener('click', (e) => {
+        console.log('Sign up button clicked');
+        e.preventDefault(); 
+        checkInputs();
+
+    });
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        checkInputs();
+    })
+
+        function checkInputs(){
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+
+            if(usernameValue ===''){
+                setErrorFor(username, 'Username cannot be blank');
+            }else{
+                setSuccessFor(username);
+            }
+
+        }
+
+        function setErrorFor(input, message){
+            const formControl = input.parentElement;
+            const span = formControl.querySelector('span');
+
+            span.innerText = message;
+            formControl.className = '-in error';
+        }
+
+        function setSuccessFor(input){
+            const formControl = input.parentElement;
+            formControl.className = '-in success';
+        }

@@ -137,27 +137,38 @@
                     <ion-icon class="user" name="person-circle-outline"></ion-icon>
                 </div>
                 <div class="form-box">
-                    <form id="form">
+                    <form id="form" >
                         <div class="productsPic">
                             <img src="img/sign-in.png">
                         </div>
                         <div class="sign-in" >
-                            <h1 id="form-title">Sign Up</h1>
+                            <h1 id="title">Sign Up</h1>
 
-                            <div class="-in " id="field">
-                                <input type="text" placeholder="Username" id="contact-name ">
+                            <div class="btn-">
+                                <button id="signupBtn">Sign up</button>
+                                <button class="disable" id="signinBtn">Sign in</button>
+                            </div>
+
+                            <div class="in" id="field">
+                                <input type="text" placeholder="Username" id="username">
                                 <ion-icon class = "checkmark-circle" name="checkmark-circle"></ion-icon>
                                 <ion-icon class = "alert-circle" name="alert-circle"></ion-icon>
                                 <span>Error message</span>
                             </div>
-                            <div class="-in " >
-                                <input type="text" placeholder="Email" id="contact-email" >
+                            <div class="in">
+                                <input type="text" placeholder="Email" id="email">
                                 <ion-icon class = "checkmark-circle" name="checkmark-circle"></ion-icon>
                                 <ion-icon class = "alert-circle" name="alert-circle"></ion-icon>
                                 <span>Error message</span>
                             </div>
-                            <div class="-in">
-                                <input type="password" placeholder="Password" id="contact-password" >
+                            <div class="in">
+                                <input type="password" placeholder="Password" id="password" >
+                                <ion-icon class = "checkmark-circle" name="checkmark-circle"></ion-icon>
+                                <ion-icon class = "alert-circle" name="alert-circle"></ion-icon>
+                                <span>Error message</span>
+                            </div>
+                            <div class="in" id="passwordField">
+                                <input type="password" placeholder="Confirm Password" id="password2" >
                                 <ion-icon class = "checkmark-circle" name="checkmark-circle"></ion-icon>
                                 <ion-icon class = "alert-circle" name="alert-circle"></ion-icon>
                                 <span>Error message</span>
@@ -176,9 +187,8 @@
                                     more.</a>
                             <p>
                         </div>
-                        <div class="btn-">
-                            <button type="submit"  id="signupBtn">Sign up</button>
-                            <button type="submit" class="disable" id="signinBtn">Sign in</button>
+                        <div class="Register">
+                            <input onclick="checkInputs();"  type="submit" value="Submit" id="RegisterBtn">
                         </div>
                     </div>
         

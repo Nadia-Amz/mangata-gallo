@@ -71,7 +71,6 @@
         signinBtn.classList.add("disable");
     }
 
-    // const form = document.getElementById("form");
 
     const username = document.getElementById("username");
     const email = document.getElementById("email");
@@ -79,27 +78,9 @@
     const confirmPassword = document.getElementById("password2");
 
 
-    // username.addEventListener("focus", () => {
-    //     checkInput(username);
-    // });
-    
-    // email.addEventListener("focus", () => {
-    //     checkInput(email);
-    // });
-    
-    // password.addEventListener("focus", () => {
-    //     checkInput(password);
-    // });
-
-    // form.addEventListener("submit", (e) => {
-    //     e.preventDefault();
-    //     checkInputs();
-    // })
 
         function checkInputs(){
-            // checkInput(username);
-            // checkInput(email);
-            // checkInput(password);
+          
             const usernameValue = username.value.trim();
             const emailValue = email.value.trim();
             const passwordValue = password.value.trim();
@@ -107,57 +88,55 @@
 
             const isUsernameVisible = parseInt(getComputedStyle(field).maxHeight) > 0;
             const isConfirmPasswordVisible = parseInt(getComputedStyle(passwordField).maxHeight) > 0;
+            
+            let isValid = true;
 
-
-              if (isUsernameVisible) {
+            if (isUsernameVisible) {
                  if (usernameValue === '') {
                     setErrorFor(username, 'Username cannot be blank');
+                    isValid = false;
             } else {
             setSuccessFor(username);
             }
             }
             if(emailValue === ''){
                 setErrorFor(email, 'Email cannot be blank');
+                isValid = false;
             }else if(!isEmail(emailValue)){
                 setErrorFor(email, 'Email is not valid');
+                isValid = false;
             }else{
                 setSuccessFor(email);
             }
 
             if(passwordValue ===''){
                 setErrorFor(password, 'Password cannot be blank');
+                isValid = false;
             }else if(!isPassword(passwordValue)){
                 setErrorFor(password, 'Password is not valid');
+                isValid = false;
             }else{
                 setSuccessFor(password);
             }
+            
             if (isConfirmPasswordVisible) {
             if(confirmPasswordValue ===''){
                 setErrorFor(confirmPassword, 'Confirm password cannot be blank');
+                isValid = false;
             }else if(passwordValue !== confirmPasswordValue){
                 setErrorFor(confirmPassword, 'Passwords does not match');
+                isValid = false;
             }else {
                 setSuccessFor(confirmPassword);
             }
-             }
+            }
+            if(isValid){
+                alert("Login successful!");
+            }
+        
+
         }
 
-
-
-        // function checkInput(input) {
-        //     const inputValue = input.value.trim();
-        //     const formControl = input.parentElement;
-        //     const span = formControl.querySelector('span');
-        
-        //     if (document.activeElement === input && inputValue === '') {
-        //         setErrorFor(input, '');
-        //         span.style.visibility = 'visible'; 
-        //     } else {
-        //         setSuccessFor(input);
-        //         span.style.visibility = 'hidden'; 
-        //     }
-        // }
-        
 
         function setErrorFor(input, message){
             const formControl = input.parentElement;

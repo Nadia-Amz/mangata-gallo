@@ -43,8 +43,7 @@
 
     let signinBtn = document.getElementById("signinBtn");
     let signupBtn = document.getElementById("signupBtn");
-    let RegisterBtn = document.getElementById("RegisterBtn").addEventListener("click", function(event) {
-        event.preventDefault();});
+    let RegisterBtn = document.getElementById("RegisterBtn");
     let field = document.getElementById("field");
     let passwordField = document.getElementById("passwordField");
     let title = document.getElementById("title");
@@ -93,8 +92,8 @@
 
             if (isUsernameVisible) {
                  if (usernameValue === '') {
-                    setErrorFor(username, 'Username cannot be blank');
                     isValid = false;
+                    setErrorFor(username, 'Username cannot be blank');
             } else {
             setSuccessFor(username);
             }
@@ -131,10 +130,13 @@
             }
             }
             if(isValid){
-                alert("Login successful!");
-            }
-        
+                const alertElement = document.getElementById('alert');
+                alertElement.style.visibility = 'visible';
 
+                setTimeout(() => {
+                alertElement.style.visibility = 'hidden';
+                }, 2000);
+            }
         }
 
 

@@ -77,67 +77,111 @@
     const confirmPassword = document.getElementById("password2");
 
 
+    
+    const rememberMe = document.getElementById("RememberCheck");
+    rememberMe.addEventListener('change', lsRememberMe);
 
-        function checkInputs(){
-          
-            const usernameValue = username.value.trim();
-            const emailValue = email.value.trim();
-            const passwordValue = password.value.trim();
-            const confirmPasswordValue = confirmPassword.value.trim();
+    
+    if(localStorage.checkbox && localStorage.checkbox !==""){
+        rememberMe.setAttribute("checked", "checked");
+        email.value = localStorage.email;
+        password.value = localStorage.password;
+    }else{
+        rememberMe.removeAttribute("checked");
+        email.value = "";
+        password.value = "";
+    }
 
-            const isUsernameVisible = parseInt(getComputedStyle(field).maxHeight) > 0;
-            const isConfirmPasswordVisible = parseInt(getComputedStyle(passwordField).maxHeight) > 0;
-            
-            let isValid = true;
+    function lsRememberMe() {
+        
+        if (rememberMe.checked && email.value !== "" && password.value !=="") {
+          localStorage.email = email.value;
+          localStorage.password = password.value;
+          localStorage.checkbox = rememberMe.value;
+        } else {
+          localStorage.email = "";
+          localStorage.password = "";
+          localStorage.checkbox = "";
+        }
+      }
 
-            if (isUsernameVisible) {
-                 if (usernameValue === '') {
-                    isValid = false;
-                    setErrorFor(username, 'Username cannot be blank');
+
+    username.addEventListener('input', checkUsername);
+    email.addEventListener('input', checkEmail);
+    password.addEventListener('input', checkPassword);
+    confirmPassword.addEventListener('input', checkConfirmPassword);
+
+    function checkUsername() {
+        const usernameValue = username.value.trim();
+        const isUsernameVisible = parseInt(getComputedStyle(field).maxHeight) > 0;
+
+        if (isUsernameVisible) {
+            if (usernameValue === '') {
+                setErrorFor(username, 'Username cannot be blank');
             } else {
-            setSuccessFor(username);
-            }
-            }
-            if(emailValue === ''){
-                setErrorFor(email, 'Email cannot be blank');
-                isValid = false;
-            }else if(!isEmail(emailValue)){
-                setErrorFor(email, 'Email is not valid');
-                isValid = false;
-            }else{
-                setSuccessFor(email);
-            }
-
-            if(passwordValue ===''){
-                setErrorFor(password, 'Password cannot be blank');
-                isValid = false;
-            }else if(!isPassword(passwordValue)){
-                setErrorFor(password, 'Password is not valid');
-                isValid = false;
-            }else{
-                setSuccessFor(password);
-            }
-            
-            if (isConfirmPasswordVisible) {
-            if(confirmPasswordValue ===''){
-                setErrorFor(confirmPassword, 'Confirm password cannot be blank');
-                isValid = false;
-            }else if(passwordValue !== confirmPasswordValue){
-                setErrorFor(confirmPassword, 'Passwords does not match');
-                isValid = false;
-            }else {
-                setSuccessFor(confirmPassword);
-            }
-            }
-            if(isValid){
-                const alertElement = document.getElementById('alert');
-                alertElement.style.visibility = 'visible';
-
-                setTimeout(() => {
-                alertElement.style.visibility = 'hidden';
-                }, 2000);
+                setSuccessFor(username);
             }
         }
+    }
+
+    function checkEmail() {
+        const emailValue = email.value.trim();
+
+        if (emailValue === '') {
+            setErrorFor(email, 'Email cannot be blank');
+        } else if (!isEmail(emailValue)) {
+            setErrorFor(email, 'Email is not valid');
+        } else {
+            setSuccessFor(email);
+        }
+    }
+
+    function checkPassword() {
+        const passwordValue = password.value.trim();
+
+        if (passwordValue === '') {
+            setErrorFor(password, 'Password cannot be blank');
+        } else if (!isPassword(passwordValue)) {
+            setErrorFor(password, 'Password is not valid');
+        } else {
+            setSuccessFor(password);
+        }
+    }
+
+    function checkConfirmPassword() {
+        const confirmPasswordValue = confirmPassword.value.trim();
+        const passwordValue = password.value.trim();
+        const isConfirmPasswordVisible = parseInt(getComputedStyle(passwordField).maxHeight) > 0;
+
+        if (isConfirmPasswordVisible) {
+            if (confirmPasswordValue === '') {
+                setErrorFor(confirmPassword, 'Confirm password cannot be blank');
+            } else if (passwordValue !== confirmPasswordValue) {
+                setErrorFor(confirmPassword, 'Passwords do not match');
+            } else {
+                setSuccessFor(confirmPassword);
+            }
+        }
+    }
+
+    function checkInputs() {
+        checkUsername();
+        checkEmail();
+        checkPassword();
+        checkConfirmPassword();
+
+        const isValid = true;
+
+        if (isValid) {
+            const alertElement = document.getElementById('alert');
+            alertElement.style.visibility = 'visible';
+
+            setTimeout(() => {
+                alertElement.style.visibility = 'hidden';
+            }, 5000);
+        }
+    }
+
 
 
         function setErrorFor(input, message){

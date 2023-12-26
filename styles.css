@@ -808,29 +808,26 @@ nav ul li:hover .subnav ul li{
 .Heading button{
     text-align: center;
     color: black;
-    background-color: white;
+    background-color: #d9b99b;
     font-size: medium;
-    border: 1px solid black;
+    border: 0;
     outline: 0;
     cursor: pointer;
     padding: 5px 25px;
     border-radius: 10px;
     margin-top: 1rem;
     opacity: 0.8;
-    text-transform: uppercase;
 }
 
 .Heading button:hover{
     opacity: 1;
-}
-    
+} 
 
 /*templates*/
 
 
 
 .sectionTwo {
-    /* background-color: antiquewhite; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -851,8 +848,8 @@ nav ul li:hover .subnav ul li{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 340px;
-    height: 340px;
+    max-width: 100%;
+    height: auto;
 }
 
 .template img {
@@ -864,22 +861,71 @@ nav ul li:hover .subnav ul li{
 }
 
 .template a{
-    text-align: center;
-    color: black;
+    position: relative;
     text-decoration: none;
+    color: black;
+    font-size: medium;
     opacity: 0.75;
+    text-align: center;
+    margin-top: 1rem;
 
 }
+
 .template a:hover{
     opacity: 1;
-
 }
 
+.template video{
+    margin-top: 2rem;
+    width: 100%;
+    height: 500px;
+}
 /*footer*/
 
 footer{
     border-top: 1px solid black;
     margin-top: 5rem;
+}
+
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+.containerFooter p{
+    font-family: 'Roboto Mono';
+    font-size: small;
+    margin-top: 0.5rem;
+}
+.containerFooter p i{
+    font-size: x-small;
+    margin-right: 0.3rem;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+
+}
+
+.social li {
+    display: inline-block;
+    font-size: 2rem;
+    transition: 0.5s;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.social li:hover{
+    transform: translateY(-10px);
 }
 
 .contactArea{
@@ -888,6 +934,8 @@ footer{
     justify-content: center;
     align-items: center;
     padding-bottom: 2rem;
+    margin-top: 1rem;
+
 }
 
 .about li{
@@ -908,42 +956,6 @@ footer{
     opacity: 1;
 }
 
-.containerFooter {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    
-}
-.containerFooter p{
-    font-family: 'Roboto Mono';
-    font-size: small;
-}
-.containerFooter p i{
-    font-size: x-small;
-    margin-right: 0.3rem;
-}
-.social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.social li {
-    display: inline-block;
-    font-size: 2rem;
-    transition: 0.5s;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-}
-
-.social li:hover{
-    transform: translate(10px);
-}
 footer img {
     width: 10rem;
     height: auto;

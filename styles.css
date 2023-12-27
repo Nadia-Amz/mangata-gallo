@@ -39,7 +39,7 @@ body {
 h1{
     font-family: 'Roboto Mono';
     font-size: medium;
-    padding-bottom: 1rem;
+    font-weight: bold;
     width: 100%;
 }
 /*Search btn*/
@@ -727,14 +727,12 @@ nav ul li:hover .subnav ul li{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: rem;
-
-
+    /* background-color: rgb(241, 241, 237); */
+    margin-top: 2rem;
 }
 .article img{
     max-width: 100%;
     height: 100vh;
-    margin-top: 1rem;
 
 }
 .info {
@@ -803,7 +801,6 @@ nav ul li:hover .subnav ul li{
 .Heading p{
     text-align: center;
     font-size: medium;
-    margin-top: 1rem;
 }
 .Heading button{
     text-align: center;
@@ -825,7 +822,22 @@ nav ul li:hover .subnav ul li{
 
 /*templates*/
 
-
+.pic-container{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+.pic-container img{
+    max-width: 100%;
+    height: auto;
+}
+.Heading p{
+    padding: 5px;
+    width: 70%;
+    margin-top: 0.5rem;
+}
 
 .sectionTwo {
     display: flex;
@@ -875,16 +887,87 @@ nav ul li:hover .subnav ul li{
     opacity: 1;
 }
 
-.template video{
-    margin-top: 2rem;
-    width: 100%;
-    height: 500px;
+.video-area{
+    position: relative;
 }
+.video-loop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    min-width: 100%;
+    height: auto;
+}
+.more-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    z-index: 1;
+    padding: 30px;
+    position: absolute;
+    top: 20rem;
+    max-width: 70%;
+    margin-left: 12rem;
+    
+}
+
+.more-info h1,
+.Heading h1{
+    text-align: center;
+    font-weight: lighter;
+    font-size: larger;
+    margin-bottom: 0.5rem;
+}
+.more-info p,
+.Heading p{
+    opacity: 0.8;
+}
+.more-info button,
+.Heading button{
+    text-align: center;
+    color: black;
+    background-color: transparent;
+    font-size: medium;
+    border: 1px solid black;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 1rem;
+    opacity: 0.8;
+    padding: 2px;
+    width: 15%;
+}
+
+.more-info button:hover,
+.Heading button:hover{
+    background-color:#d9b99b;
+    opacity: 1;
+} 
+.Gift-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    margin-top: 3rem;
+    background-color: rgb(241, 241, 237);
+}
+
+.Gift-area img{
+    max-width: 100%;
+    height: 100vh;
+}
+
 /*footer*/
 
 footer{
     border-top: 1px solid black;
-    margin-top: 5rem;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 3rem;
 }
 
 .containerFooter {
@@ -933,9 +1016,7 @@ footer{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2rem;
     margin-top: 1rem;
-
 }
 
 .about li{
@@ -963,14 +1044,40 @@ footer img {
 
 
 /*Bracelets page*/
-.Bracelet{
-    background-color: palevioletred;
+.Cover-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    margin-top: 6rem;
+    /* background-color: rgb(215, 214, 214); */
 }
-h2{
+.Cover-area img{
+    max-width: 50%;
+    height: 100%;
+}
+.info-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    max-width: 100%;
+    height: 100%;
+}
+.info-area p{
+    padding: 5px;
     text-align: center;
-    font-size: 25px;
 }
+.info-area h1{
+    text-align: center;
+    font-weight: lighter;
+    font-size: larger;
+    margin-bottom: 1rem;
 
+}
 .Bracelet-pic{
     height: 89rem;
     background-color: #0d8348;

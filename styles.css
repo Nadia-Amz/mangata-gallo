@@ -951,22 +951,25 @@ nav ul li:hover .subnav ul li{
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
-    height: auto;
+    height: 500px;
     margin-top: 3rem;
     background-color: rgb(241, 241, 237);
 }
 
 .Gift-area img{
-    max-width: 100%;
-    height: 100vh;
+    width: 50%;
+    height: 500px;
 }
 
 /*footer*/
 
 footer{
-    border-top: 1px solid black;
+    border-top: 0.5px solid rgb(189, 179, 179);
     max-width: 100%;
     height: auto;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     padding-bottom: 3rem;
 }
 
@@ -1052,7 +1055,6 @@ footer img {
     max-width: 100%;
     height: auto;
     margin-top: 6rem;
-    /* background-color: rgb(215, 214, 214); */
 }
 .Cover-area img{
     max-width: 50%;
@@ -1063,13 +1065,16 @@ footer img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 15px;
     max-width: 100%;
     height: 100%;
 }
 .info-area p{
     padding: 5px;
     text-align: center;
+    font-weight: lighter;
+    font-family: 'Roboto Mono';
+    opacity: 0.8;
 }
 .info-area h1{
     text-align: center;
@@ -1078,37 +1083,80 @@ footer img {
     margin-bottom: 1rem;
 
 }
-.Bracelet-pic{
-    height: 89rem;
-    background-color: #0d8348;
-}
-.Div1{
+.thinLine{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    max-width: 100%;
+    height: auto;
+    border-top: 0.5px solid rgb(189, 179, 179);
 }
-#pic2{
-    height: 350px;
-
+.Bracelet-pic{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+}
+.Div1,
+.Div2,
+.Div3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;  
+    width: 100%;
+    height: auto;
 }
 .item1{
-    border: 1px solid black;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .item1 p{
-    margin-top: 5px;
     text-align: center;
-    height: 20px;
-    background-color: aqua;
+    font-weight: lighter;
+    margin-top: 0.5rem;
+    opacity: 0.6;
 }
 
 .item1 button{
-    font-size: 15px;
-    margin-left: 95px;
-    margin-bottom: 5px;
-    
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: 0.5s;
 }
 .item1 button:hover{
-    background-color: #81d8d0;
+    background-color: #d9b99b;
+    opacity: 1;
+}
+.heartIcon{
+    display: flex;
+    justify-content: end;
+}
+.heart-icon{
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.5;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    transition: 0.5s;
+}
+
+.heart-icon:hover{
+    opacity: 1;
+}
+
+#pic2{
+    width: 340px;
+    height: 340px;
 }

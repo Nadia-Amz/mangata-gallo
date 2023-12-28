@@ -31,6 +31,47 @@
     //         sidebar.classList.add('hide')
     //     })
 
+/* wishliste*/
+let wishliste = [];
+
+function setup(){
+    console.log("window loaded");
+    const products = document.querySelectorAll(".add-to-card");
+    for(let i=0; i<products.length; i++){
+        products[i].onclick = function(e){
+            addItem(e);
+        }
+    }
+
+
+}
+
+function addItem(e){
+    const productId = e.target.getAttribute("id");
+    console.log("Product :", productId);
+    const productDiv = document.getElementById(productId);
+
+    const wishDiv = document.createElement("div");
+    wishDiv.setAttribute("id", "wish" + productId);
+    wishDiv.setAttribute("class", "item1");
+    wishDiv.innerHTML = productDiv.innerHTML;
+
+    const removeBtn = document.createElement("input");
+    removeBtn.setAttribute("type", "button");
+    removeBtn.setAttribute("value", "Remove");
+    removeBtn.onclick = function() { removeItem(productId)};
+    wishDiv.appendChild(removeBtn);
+
+    let aside = document.getElementById("wish-List");
+    aside.appendChild(wishDiv);
+}
+
+function removeItem(productId){
+    const product = document.getElementById("wish" +productId);
+    product.remove();
+}
+
+window.addEventListener("load", setup);
 
  /*sticky nav*/
 

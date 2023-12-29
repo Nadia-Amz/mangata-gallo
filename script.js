@@ -32,46 +32,72 @@
     //     })
 
 /* wishliste*/
-let wishliste = [];
 
-function setup(){
-    console.log("window loaded");
-    const products = document.querySelectorAll(".add-to-card");
-    for(let i=0; i<products.length; i++){
-        products[i].onclick = function(e){
-            addItem(e);
-        }
+
+let wishlist = [];
+
+
+function addToWishlist(itemId) {
+    if (!wishlist.includes(itemId)) {
+        wishlist.push(itemId);
+        updateWishlistDisplay();
+        console.log(`Item ${itemId} added to wishlist`);
+    } else {
+        console.log(`Item ${itemId} is already in the wishlist`);
     }
+}
+function updateWishlistDisplay() {
+    const wishlistItemsContainer = document.getElementById('wishlistItems');
+    
+    wishlistItemsContainer.innerHTML = '';
 
-
+    if (wishlist.length > 0) {
+        wishlist.forEach(itemId => {
+            const itemDiv = document.getElementById(itemId).cloneNode(true);
+            itemDiv.classList.add('wishlist-item');
+            wishlistItemsContainer.appendChild(itemDiv);
+        });
+    }
 }
 
-function addItem(e){
-    const productId = e.target.getAttribute("id");
-    console.log("Product :", productId);
-    const productDiv = document.getElementById(productId);
+// function setup(){
+//     console.log("window loaded");
+//     const products = document.querySelectorAll(".add-to-card");
+//     for(let i=0; i<products.length; i++){
+//         products[i].onclick = function(e){
+//             addItem(e);
+//         }
+//     }
 
-    const wishDiv = document.createElement("div");
-    wishDiv.setAttribute("id", "wish" + productId);
-    wishDiv.setAttribute("class", "item1");
-    wishDiv.innerHTML = productDiv.innerHTML;
 
-    const removeBtn = document.createElement("input");
-    removeBtn.setAttribute("type", "button");
-    removeBtn.setAttribute("value", "Remove");
-    removeBtn.onclick = function() { removeItem(productId)};
-    wishDiv.appendChild(removeBtn);
+// }
 
-    let aside = document.getElementById("wish-List");
-    aside.appendChild(wishDiv);
-}
+// function addItem(e){
+//     const productId = e.target.getAttribute("id");
+//     console.log("Product :", productId);
+//     const productDiv = document.getElementById(productId);
 
-function removeItem(productId){
-    const product = document.getElementById("wish" +productId);
-    product.remove();
-}
+//     const wishDiv = document.createElement("div");
+//     wishDiv.setAttribute("id", "wish" + productId);
+//     wishDiv.setAttribute("class", "item1");
+//     wishDiv.innerHTML = productDiv.innerHTML;
 
-window.addEventListener("load", setup);
+//     const removeBtn = document.createElement("input");
+//     removeBtn.setAttribute("type", "button");
+//     removeBtn.setAttribute("value", "Remove");
+//     removeBtn.onclick = function() { removeItem(productId)};
+//     wishDiv.appendChild(removeBtn);
+
+//     let aside = document.getElementById("wish-List");
+//     aside.appendChild(wishDiv);
+// }
+
+// function removeItem(productId){
+//     const product = document.getElementById("wish" +productId);
+//     product.remove();
+// }
+
+// window.addEventListener("load", setup);
 
  /*sticky nav*/
 

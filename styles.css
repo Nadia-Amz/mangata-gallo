@@ -158,6 +158,7 @@ h1{
 }
 
 
+
 .bag{
     border: 0 ;
     font-size: 1.3rem;
@@ -535,10 +536,9 @@ label {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center; 
+    text-align: center;  
     z-index: 1;
-    width: 50%;
+    width: 30%;
     right: 0.5rem;
     height: 0;
     top: 100%;
@@ -1138,6 +1138,7 @@ footer img {
 .item1 button:hover{
     background-color: #d9b99b;
     opacity: 1;
+    cursor: pointer;
 }
 .heartIcon{
     display: flex;
@@ -1150,13 +1151,54 @@ footer img {
     margin-top: 0.5rem;
     margin-right: 1rem;
     transition: 0.5s;
+    
 }
-
 .heart-icon:hover{
     opacity: 1;
+    color: red;
+    cursor: pointer;
 }
+
 
 #pic2{
     width: 340px;
     height: 340px;
+}
+
+.wishlist-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 200px;
+    width: auto;
+    top: 0;
+    border-bottom: #a09b9b 1px solid;
+    margin-top: 2rem;
+
+    #pic2{
+        height: 200px;
+        width: 200px;
+    }
+    ion-icon{
+       display: none;
+    }
+    #description{
+        font-size: small;
+        opacity: 1;
+        margin-left: 1rem;
+    }
+    #price{
+        font-size: small;
+        opacity: 1;
+        margin-top: 2rem;
+        margin-left: -12rem;
+        width: auto;
+    }
+    #item1{
+        margin-top: 9rem;
+        margin-left: -3rem;
+    }
+   
+    
 }

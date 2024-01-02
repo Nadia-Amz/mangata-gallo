@@ -31,6 +31,15 @@
     //         sidebar.classList.add('hide')
     //     })
 
+    /*heart icon*/
+    const icons = document.querySelectorAll('.heart-icon');
+    icons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            icon.style.color = 'red';
+            icon.style.opacity = '1';
+        });
+    });
+
 /* wishliste*/
 
 
@@ -55,49 +64,71 @@ function updateWishlistDisplay() {
         wishlist.forEach(itemId => {
             const itemDiv = document.getElementById(itemId).cloneNode(true);
             itemDiv.classList.add('wishlist-item');
-            wishlistItemsContainer.appendChild(itemDiv);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.onclick = function() {
+                deleteItem(itemId);
+            };
+
+            itemDiv.appendChild(removeBtn);
+            wishlistItemsContainer.appendChild(itemDiv); 
         });
     }
 }
 
-// function setup(){
-//     console.log("window loaded");
-//     const products = document.querySelectorAll(".add-to-card");
-//     for(let i=0; i<products.length; i++){
-//         products[i].onclick = function(e){
-//             addItem(e);
-//         }
-//     }
+function deleteItem(itemId) {
+    const index = wishlist.indexOf(itemId);
+    if (index !== -1) {
+        wishlist.splice(index, 1);
+        updateWishlistDisplay();
+        console.log(`Item ${itemId} removed from wishlist`);
+    }
+}
 
 
-// }
 
-// function addItem(e){
-//     const productId = e.target.getAttribute("id");
-//     console.log("Product :", productId);
-//     const productDiv = document.getElementById(productId);
+/*cart list*/
+let cartlist = [];
 
-//     const wishDiv = document.createElement("div");
-//     wishDiv.setAttribute("id", "wish" + productId);
-//     wishDiv.setAttribute("class", "item1");
-//     wishDiv.innerHTML = productDiv.innerHTML;
+function setup(){
+    console.log("window loaded");
+    const products = document.querySelectorAll(".add-to-card");
+    for(let i=0; i<products.length; i++){
+        products[i].onclick = function(e){
+            addItem(e);
+        }
+    }
+}
 
-//     const removeBtn = document.createElement("input");
-//     removeBtn.setAttribute("type", "button");
-//     removeBtn.setAttribute("value", "Remove");
-//     removeBtn.onclick = function() { removeItem(productId)};
-//     wishDiv.appendChild(removeBtn);
+function addItem(e){
+    const productId = e.target.getAttribute("id");
+    console.log("Product :", productId);
+    const productDiv = document.getElementById(productId);
 
-//     let aside = document.getElementById("wish-List");
-//     aside.appendChild(wishDiv);
-// }
+    const cartDiv = document.createElement("div");
+    cartDiv.setAttribute("id", "cart" + productId);
+    cartDiv.setAttribute("class", "item1");
+    cartDiv.classList.add('cart-item');
 
-// function removeItem(productId){
-//     const product = document.getElementById("wish" +productId);
-//     product.remove();
-// }
+    cartDiv.innerHTML = productDiv.innerHTML;
 
-// window.addEventListener("load", setup);
+    const removeBtn = document.createElement("input");
+    removeBtn.setAttribute("type", "button");
+    removeBtn.setAttribute("value", "Remove");
+    removeBtn.onclick = function() { removeItem(productId)};
+    cartDiv.appendChild(removeBtn);
+
+    let aside = document.getElementById("cart-List");
+    aside.appendChild(cartDiv);
+}
+
+function removeItem(productId){
+    const product = document.getElementById("cart" +productId);
+    product.remove();
+}
+
+window.addEventListener("load", setup);
 
  /*sticky nav*/
 

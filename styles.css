@@ -1150,7 +1150,7 @@ footer img {
     opacity: 0.5;
     margin-top: 0.5rem;
     margin-right: 1rem;
-    transition: 0.5s;
+    transition: 0.2s;
     
 }
 .heart-icon:hover{
@@ -1160,12 +1160,14 @@ footer img {
 }
 
 
+
 #pic2{
     width: 340px;
     height: 340px;
 }
 
-.wishlist-item{
+.wishlist-item,
+.cart-item{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -1187,18 +1189,36 @@ footer img {
         font-size: small;
         opacity: 1;
         margin-left: 1rem;
+        margin-top: 3rem;
     }
     #price{
         font-size: small;
         opacity: 1;
-        margin-top: 2rem;
+        margin-top: 5rem;
         margin-left: -12rem;
         width: auto;
+        text-align: center;
     }
     #item1{
-        margin-top: 9rem;
-        margin-left: -3rem;
+        margin-top: 10rem;
+    
+    }
+    button{
+        margin-top: 10rem;
+        margin-right: 0.5rem;
     }
    
     
 }
+/* .cart-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 200px;
+    width: auto;
+    top: 0;
+    border-bottom: #a09b9b 1px solid;
+    margin-top: 2rem;
+    background-color: #0d8348;
+} */

@@ -33,17 +33,30 @@
 
     /*heart icon*/
     const icons = document.querySelectorAll('.heart-icon');
+    let wishlist = [];
+
     icons.forEach(icon => {
+        let isClicked = false;
+    
         icon.addEventListener('click', () => {
-            icon.style.color = 'red';
-            icon.style.opacity = '1';
+            
+            if (isClicked) {
+                icon.style.color = ''; 
+                icon.style.opacity = '0.5'; 
+                
+            } else {
+                icon.style.color = 'red';
+                icon.style.opacity = '1';
+            }
+    
+            isClicked = !isClicked;
         });
     });
+    
 
 /* wishliste*/
 
 
-let wishlist = [];
 
 
 function addToWishlist(itemId) {
@@ -113,9 +126,8 @@ function addItem(e){
 
     cartDiv.innerHTML = productDiv.innerHTML;
 
-    const removeBtn = document.createElement("input");
-    removeBtn.setAttribute("type", "button");
-    removeBtn.setAttribute("value", "Remove");
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
     removeBtn.onclick = function() { removeItem(productId)};
     cartDiv.appendChild(removeBtn);
 

@@ -190,16 +190,18 @@ h1{
     background-color: #bcb5ae; 
   }
 
-.bag::after{
-    content: '0';
-    font-size: 9px;
+#count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
     font-weight: bolder;
-    width: 15px;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    top: -45px;
-    left: 50%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 60%;
+    right: 0.8rem;
 }
 
 /* .sidebar{
@@ -776,8 +778,7 @@ nav ul li:hover .subnav ul li{
     cursor: pointer;
     padding: 5px 25px;
     border-radius: 10px;
-    margin-top: 0.5re
-    m;
+    margin-top: 0.5rem;
     opacity: 0.8;
 }
 

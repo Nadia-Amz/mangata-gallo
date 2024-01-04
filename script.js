@@ -1,39 +1,7 @@
 
+/*heart icon*/
 
-/*bag container*/
-
-    // const bag = document.querySelector(".fa-bag-shopping");
-    // const sidebar = document.querySelector(".sidebar");
-    // sidebar.inWindow = 0
-
-    // bag.addEventListener('mouseover',() =>{
-    //     if(sidebar.classList.contains('hide'))
-    //     sidebar.classList.remove('hide')
-        
-    // })
-
-
-    // bag.addEventListener('mouseleave',() =>{
-    //     /*if(sidebar.classList.contains('hide'))*/
-    //     setTimeout(()=>{
-    //     if(sidebar.inWindow===0){
-    //         sidebar.classList.add('hide')
-    //     }
-    //     },500)
-        
-    // })
-    //     sidebar.addEventListener('mouseover',()=>{
-    //         sidebar.inWindow=1
-    //     })
-
-    //     sidebar.addEventListener('mouseleave',()=>{
-    //         sidebar.inWindow=0
-    //         sidebar.classList.add('hide')
-    //     })
-
-    /*heart icon*/
     const icons = document.querySelectorAll('.heart-icon');
-    let wishlist = [];
 
     icons.forEach(icon => {
         let isClicked = false;
@@ -56,7 +24,7 @@
 
 /* wishliste*/
 
-
+let wishlist = [];
 
 
 function addToWishlist(itemId) {
@@ -102,6 +70,7 @@ function deleteItem(itemId) {
 
 
 /*cart list*/
+ 
 let cartlist = [];
 
 function setup(){
@@ -111,7 +80,13 @@ function setup(){
         products[i].onclick = function(e){
             addItem(e);
         }
+        
     }
+}
+
+function updateCartCount() {
+    const countElement = document.getElementById('count');
+    countElement.textContent = cartlist.length.toString();
 }
 
 function addItem(e){
@@ -133,16 +108,25 @@ function addItem(e){
 
     let aside = document.getElementById("cart-List");
     aside.appendChild(cartDiv);
+
+    cartlist.push(productId);
+    updateCartCount();
 }
 
 function removeItem(productId){
     const product = document.getElementById("cart" +productId);
+    const index = cartlist.indexOf(productId);
     product.remove();
+    if (index !== -1) {
+        cartlist.splice(index, 1);
+        updateCartCount();
+        console.log(`Item ${productId} removed from cartlist`);
+    }
 }
 
-window.addEventListener("load", setup);
+    window.addEventListener("load", setup);
 
- /*sticky nav*/
+/*sticky nav*/
 
     const nav = document.querySelector("nav");
 
@@ -150,6 +134,7 @@ window.addEventListener("load", setup);
         nav.classList.toggle ("sticky", this.window.scrollY > 0);
     })
 
+/*Form validation*/
 
     let signinBtn = document.getElementById("signinBtn");
     let signupBtn = document.getElementById("signupBtn");

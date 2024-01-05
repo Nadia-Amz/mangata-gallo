@@ -80,7 +80,6 @@ function setup(){
         products[i].onclick = function(e){
             addItem(e);
         }
-        
     }
 }
 

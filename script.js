@@ -1,3 +1,10 @@
+/*sticky nav*/
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", function(){
+    nav.classList.toggle ("sticky", this.window.scrollY > 0);
+})
 
 /*heart icon*/
 
@@ -26,7 +33,6 @@
 
 let wishlist = [];
 
-
 function addToWishlist(itemId) {
     if (!wishlist.includes(itemId)) {
         wishlist.push(itemId);
@@ -36,15 +42,20 @@ function addToWishlist(itemId) {
         console.log(`Item ${itemId} is already in the wishlist`);
     }
 }
+
+
 function updateWishlistDisplay() {
     const wishlistItemsContainer = document.getElementById('wishlistItems');
     
     wishlistItemsContainer.innerHTML = '';
+    const emptyWishlistMessage = document.getElementById("wishlist-msg");
+
 
     if (wishlist.length > 0) {
         wishlist.forEach(itemId => {
             const itemDiv = document.getElementById(itemId).cloneNode(true);
             itemDiv.classList.add('wishlist-item');
+            emptyWishlistMessage.style.display = "none";
 
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'Remove';
@@ -55,6 +66,8 @@ function updateWishlistDisplay() {
             itemDiv.appendChild(removeBtn);
             wishlistItemsContainer.appendChild(itemDiv); 
         });
+    }else {
+        emptyWishlistMessage.style.display = "block";
     }
 }
 
@@ -73,15 +86,29 @@ function deleteItem(itemId) {
  
 let cartlist = [];
 
+
 function setup(){
     console.log("window loaded");
     const products = document.querySelectorAll(".add-to-card");
     for(let i=0; i<products.length; i++){
         products[i].onclick = function(e){
             addItem(e);
+            updateEmptyCartMessage();
         }
     }
+
 }
+
+function updateEmptyCartMessage() {
+    const emptyCartMessage = document.getElementById("cart-msg");
+
+    if (cartlist.length > 0) {
+        emptyCartMessage.style.display = "none";
+    } else {
+        emptyCartMessage.style.display = "block";
+    }
+}
+
 
 function updateCartCount() {
     const countElement = document.getElementById('count');
@@ -120,18 +147,13 @@ function removeItem(productId){
         cartlist.splice(index, 1);
         updateCartCount();
         console.log(`Item ${productId} removed from cartlist`);
+        updateEmptyCartMessage();
     }
 }
 
     window.addEventListener("load", setup);
 
-/*sticky nav*/
 
-    const nav = document.querySelector("nav");
-
-    window.addEventListener("scroll", function(){
-        nav.classList.toggle ("sticky", this.window.scrollY > 0);
-    })
 
 /*Form validation*/
 

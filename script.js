@@ -14,7 +14,7 @@ window.addEventListener("scroll", function(){
         let isClicked = false;
     
         icon.addEventListener('click', () => {
-            
+      
             if (isClicked) {
                 icon.style.color = ''; 
                 icon.style.opacity = '0.5'; 
@@ -38,8 +38,8 @@ function addToWishlist(itemId) {
         wishlist.push(itemId);
         updateWishlistDisplay();
         console.log(`Item ${itemId} added to wishlist`);
-    } else {
-        console.log(`Item ${itemId} is already in the wishlist`);
+    } else{
+        deleteItem(itemId);
     }
 }
 
@@ -73,11 +73,13 @@ function updateWishlistDisplay() {
 
 function deleteItem(itemId) {
     const index = wishlist.indexOf(itemId);
+
     if (index !== -1) {
         wishlist.splice(index, 1);
         updateWishlistDisplay();
-        console.log(`Item ${itemId} removed from wishlist`);
+        console.log(`Item ${itemId} removed from wishlist`); 
     }
+
 }
 
 
@@ -90,10 +92,12 @@ let cartlist = [];
 function setup(){
     console.log("window loaded");
     const products = document.querySelectorAll(".add-to-card");
+
     for(let i=0; i<products.length; i++){
         products[i].onclick = function(e){
             addItem(e);
             updateEmptyCartMessage();
+            
         }
     }
 
@@ -148,6 +152,21 @@ function removeItem(productId){
         updateCartCount();
         console.log(`Item ${productId} removed from cartlist`);
         updateEmptyCartMessage();
+    }
+}
+
+function checkCartList() {
+
+    if (cartlist.length > 0) {
+
+        const alertElement = document.getElementById('alert-checkout');
+        alertElement.style.visibility = 'visible';
+
+        setTimeout(() => {
+            alertElement.style.visibility = 'hidden';
+        }, 1000);
+    }else{
+        console.log('cart is empty');
     }
 }
 

@@ -206,7 +206,7 @@
                 <div class="Bar" id="wish-List">
                     <h1>Your Wishlist</h1>
                     <p id="wishlist-msg">Your Wishlist Is Empty</p>
-                    <div id="wishlistItems"></div>
+                    <div  id="wishlistItems"></div>
 
                     <!-- <p>Your Wishlist Is Empty</p> -->
                 </div>
@@ -224,8 +224,9 @@
                 <div class="Bar" id="cart-List">
                     <h1>Your Shopping Cart</h1>
                     <p id="cart-msg">Your Cart Is Empty</p>
+                  
                     <div class="checkout-btn">
-                        <button type="submit">Checkout</button>
+                        <button onclick="checkCartList()" type="submit" id="checkoutBtn">Checkout</button>
                     </div>
                     <div id="cartlistItems"></div>
                         <!-- <div class="calcul">
@@ -233,6 +234,13 @@
                             <p id="total">$ 0.00</p>
                         </div> -->
                 </div>
+                <div class="alert" id="alert-checkout">
+                    <div class="msg-alert">
+                        <ion-icon class="check-icon" name="checkmark-circle-outline"></ion-icon>
+                        <p>Done ! </p>
+                    </div>
+                </div>
+                
             </div>
         </div>
 

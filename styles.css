@@ -12,6 +12,9 @@
     background-color: rgb(60, 56, 56);
     overflow: hidden;
     height: 3rem;
+    right: 0;
+    left: 0;
+    max-width: 100%;
 }
 .info-box p{
     font-size: small;
@@ -42,6 +45,7 @@ h1{
     font-weight: bold;
     width: 100%;
 }
+
 /*Search btn*/
 
 .container{
@@ -49,6 +53,14 @@ h1{
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
+}
+.content{
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: start;
+    left: 0;
+    right: 0;
 }
 
 .search{
@@ -58,7 +70,7 @@ h1{
     cursor: pointer;
     border-radius: 30px;
     padding: 5px 15px; 
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
 
 }
 
@@ -111,13 +123,16 @@ h1{
 
 .cart{
     display: flex;
-    padding: 7px 10px;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding: 7px 10px;
+    margin-right: 1rem;
 }
 
 .user,
 .like{
-    margin-right: 2rem;
+    margin-right: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
     position: relative;
@@ -156,7 +171,19 @@ h1{
 .like:hover::before{
     background-color: #bcb5ae;
 }
-
+.point{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 60%;
+    right: 4.3rem;
+    visibility: hidden;
+}
 
 
 .bag{
@@ -201,42 +228,8 @@ h1{
     border-radius: 50%;
     position: absolute;
     bottom: 60%;
-    right: 0.8rem;
+    right: 1.5rem;
 }
-
-/* .sidebar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 20%;
-    height: 0;
-    backdrop-filter: blur(7px) ;
-    background-color: rgba(255, 255, 255, 0.20);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
-    right: 0.5rem;
-    top: 100%;
-    position: absolute;
-    overflow: hidden;
-    transition: height 0.3s ease-in-out;
-
-}
-.container1:hover .sidebar{
-    height: 400px;
-}
-.hide{
-   display: none;
-  
-} */
-
-
-/* .calcul{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0px;
-    padding: 10px 0px;
-    border-top: 1px solid #000000;
-} */
 
 /*LOGIN*/
 

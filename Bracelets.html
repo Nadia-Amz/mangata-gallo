@@ -200,12 +200,14 @@
             <div class="wishlist-icon">
                 <div>
                     <ion-icon class="like" name="heart-circle-outline"></ion-icon>
+                    <div class="point"></div>
                 </div>
             </div>
             <div class="sidebar-container" >
                 <div class="Bar" id="wish-List">
                     <h1>Your Wishlist</h1>
                     <p id="wishlist-msg">Your Wishlist Is Empty</p>
+
                     <div  id="wishlistItems"></div>
 
                     <!-- <p>Your Wishlist Is Empty</p> -->
@@ -263,7 +265,7 @@
             <div class="Div1">
                 <div class="item1" id="item1">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon" onclick="addToWishlist('item1')" name="heart"></ion-icon>
+                        <ion-icon class="heart-icon" data-item-id="item1"  onclick="addToWishlist('item1')" name="heart"></ion-icon>
                         <img src="img\Brac-1.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -272,7 +274,7 @@
                 </div>
                 <div class="item1" id="item2">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item2')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item2"   onclick="addToWishlist('item2')"></ion-icon>
                         <img src="img\Brac-2.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -282,7 +284,7 @@
                 </div>
                 <div class="item1" id="item3" >
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item3')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item3"    onclick="addToWishlist('item3')"></ion-icon>
                         <img src="img\Brac-3.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -292,7 +294,7 @@
                 </div>
                 <div class="item1" id="item4">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item4')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item4"     onclick="addToWishlist('item4')"></ion-icon>
                         <img src="img\Brac-4.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -305,7 +307,7 @@
             <div class="Div2">
                 <div class="item1" id="item5">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item5')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item5"    onclick="addToWishlist('item5')"></ion-icon>
                         <img src="img\Brac-5.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -314,7 +316,7 @@
                 </div>
                 <div class="item1" id="item6">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item6')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item6" onclick="addToWishlist('item6')"></ion-icon>
                         <img src="img\Brac-6.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -324,7 +326,7 @@
                 </div>
                 <div class="item1" id="item7">
                     <div class="heartIcon" >
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item7')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item7" onclick="addToWishlist('item7')"></ion-icon>
                         <img src="img\Brac-7.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -334,7 +336,7 @@
                 </div>
                 <div class="item1" id="item8">
                     <div class="heartIcon" >
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item8')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item8" onclick="addToWishlist('item8')"></ion-icon>
                         <img src="img\Brac-8.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -346,7 +348,7 @@
             <div class="Div3">
                 <div class="item1" id="item9">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item9')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item9" onclick="addToWishlist('item9')"></ion-icon>
                         <img src="img\Brac-9.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -356,7 +358,7 @@
                 </div>
                 <div class="item1" id="item10">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item10')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item10" onclick="addToWishlist('item10')"></ion-icon>
                         <img src="img\Brac-10.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -366,7 +368,7 @@
                 </div>
                 <div class="item1" id="item11">
                     <div class="heartIcon">
-                        <ion-icon class="heart-icon"  name="heart" onclick="addToWishlist('item11')"></ion-icon>
+                        <ion-icon class="heart-icon"  name="heart" data-item-id="item11" onclick="addToWishlist('item11')"></ion-icon>
                         <img src="img\Brac-11.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>
@@ -376,7 +378,7 @@
                 </div>
                 <div class="item1" id="item12" >
                     <div class="heartIcon" id="item12">
-                        <ion-icon class="heart-icon" name="heart" onclick="addToWishlist('item12')"></ion-icon>
+                        <ion-icon class="heart-icon" name="heart" data-item-id="item12" onclick="addToWishlist('item12')"></ion-icon>
                         <img src="img\Brac-12.jpg" id="pic2">
                     </div>
                     <p id="description">BRACELET ORSO AIGUE MARINE</p>

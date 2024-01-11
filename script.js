@@ -33,13 +33,17 @@ window.addEventListener("scroll", function(){
 
 let wishlist = [];
 
+
 function addToWishlist(itemId) {
-    if (!wishlist.includes(itemId)) {
+    const point= document.querySelector('.point');
+    if (!wishlist.includes(itemId) && point) {
         wishlist.push(itemId);
         updateWishlistDisplay();
+        point.style.visibility = "visible";
         console.log(`Item ${itemId} added to wishlist`);
     } else{
         deleteItem(itemId);
+        point.style.visibility = "hidden";
     }
 }
 
@@ -49,18 +53,22 @@ function updateWishlistDisplay() {
     
     wishlistItemsContainer.innerHTML = '';
     const emptyWishlistMessage = document.getElementById("wishlist-msg");
-
+    const point= document.querySelector('.point');
 
     if (wishlist.length > 0) {
         wishlist.forEach(itemId => {
             const itemDiv = document.getElementById(itemId).cloneNode(true);
             itemDiv.classList.add('wishlist-item');
             emptyWishlistMessage.style.display = "none";
+            point.style.visibility = "visible";
 
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'Remove';
+            const icons = document.querySelector(`.heart-icon[data-item-id="${itemId}"]`);
             removeBtn.onclick = function() {
-                deleteItem(itemId);
+                deleteItem(itemId);  
+                icons.style.color='';
+                icons.style.opacity='0.5';
             };
 
             itemDiv.appendChild(removeBtn);
@@ -68,21 +76,20 @@ function updateWishlistDisplay() {
         });
     }else {
         emptyWishlistMessage.style.display = "block";
+        point.style.visibility = "hidden";
+
     }
 }
 
 function deleteItem(itemId) {
     const index = wishlist.indexOf(itemId);
 
-    if (index !== -1) {
+    if (index !== -1 && icons) {
         wishlist.splice(index, 1);
         updateWishlistDisplay();
         console.log(`Item ${itemId} removed from wishlist`); 
     }
-
 }
-
-
 
 /*cart list*/
  
@@ -97,7 +104,6 @@ function setup(){
         products[i].onclick = function(e){
             addItem(e);
             updateEmptyCartMessage();
-            
         }
     }
 

@@ -1245,4 +1245,10 @@ footer img {
     text-align: center;
     padding: 2px 25px;
 }
+.wishlist-item .add-to-card{
+    visibility: hidden;
+}
+ .cart-div #addItemBtn{
+    visibility: hidden;
+}
 

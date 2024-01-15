@@ -35,15 +35,14 @@ let wishlist = [];
 
 
 function addToWishlist(itemId) {
-    const point= document.querySelector('.point');
-    if (!wishlist.includes(itemId) && point) {
+    if (!wishlist.includes(itemId)) {
         wishlist.push(itemId);
         updateWishlistDisplay();
-        point.style.visibility = "visible";
+        updatePoint();
         console.log(`Item ${itemId} added to wishlist`);
     } else{
         deleteItem(itemId);
-        point.style.visibility = "hidden";
+        updatePoint();
     }
 }
 
@@ -52,23 +51,26 @@ function updateWishlistDisplay() {
     const wishlistItemsContainer = document.getElementById('wishlistItems');
     
     wishlistItemsContainer.innerHTML = '';
-    const emptyWishlistMessage = document.getElementById("wishlist-msg");
-    const point= document.querySelector('.point');
+ 
 
     if (wishlist.length > 0) {
         wishlist.forEach(itemId => {
             const itemDiv = document.getElementById(itemId).cloneNode(true);
+            const buttonContainer = document.createElement('div');
             const icons = document.querySelector(`.heart-icon[data-item-id="${itemId}"]`);
 
+
+
             itemDiv.classList.add('wishlist-item');
-            emptyWishlistMessage.style.display = "none";
-            point.style.visibility = "visible";
+            buttonContainer.classList.add('buttonContainer');
+           
 
             const addItemBtn = document.createElement('button');
             addItemBtn.textContent = 'Add to cart';
             addItemBtn.id = "addItemBtn";
             addItemBtn.onclick = function(){
                 addToCart(itemId);
+                
                 icons.style.color='';
                 icons.style.opacity='0.5';
 
@@ -83,24 +85,42 @@ function updateWishlistDisplay() {
                 icons.style.opacity='0.5';
             };
 
-            itemDiv.appendChild(removeBtn);
-            itemDiv.appendChild(addItemBtn);
+            buttonContainer.appendChild(removeBtn);
+            buttonContainer.appendChild(addItemBtn);
+            itemDiv.appendChild(buttonContainer);
             wishlistItemsContainer.appendChild(itemDiv);
         });
-    }else {
-        emptyWishlistMessage.style.display = "block";
-        point.style.visibility = "hidden";
-
     }
+        updateEmptyWishlistMessage();
+        updatePoint();
+    
 }
+
+function updateEmptyWishlistMessage() {
+    const emptyWishlistMessage = document.getElementById("wishlist-msg");
+ if (wishlist.length > 0) {
+     emptyWishlistMessage.style.display = "none";
+ } else {
+    emptyWishlistMessage.style.display = "block";
+ }
+}
+
+function updatePoint() {
+    const point= document.querySelector('.point');
+ if (wishlist.length > 0) {
+    point.style.visibility = "visible";
+} else {
+    point.style.visibility = "hidden";
+}
+}
+
+
 function addToCart(itemId) {
     const wishlistItem = document.getElementById(itemId);
-    const emptyWishlistMessage = document.getElementById("wishlist-msg");
-    const point= document.querySelector('.point');
 
     // Check if the wishlist item exists
     if (wishlistItem) {
-        const cartItemsContainer = document.getElementById('cartlistItems');
+        const cartItemsContainer = document.getElementById('cartlistItems'); 
 
         // Clone the wishlist item or create a new cart item
         const cartItem = wishlistItem.cloneNode(true);
@@ -114,16 +134,20 @@ function addToCart(itemId) {
 
         cartlist.push(cartItem);
 
+        console.log('CART : ' ,cartlist.length);
+
         // Remove the item from the wishlist
         wishlistItem.remove();
+        deleteItem(itemId);
 
-        emptyWishlistMessage.style.display = "block";
-        point.style.visibility = "hidden";
+        console.log('wishlist: ', wishlist.length);
         console.log(`Item ${itemId} added to the cart and removed from the wishlist`);
 
+
+        updateEmptyWishlistMessage();
+        updatePoint();
         updateEmptyCartMessage();
         updateCartCount(); 
-
 
     }
 }
@@ -137,6 +161,7 @@ function deleteItem(itemId) {
         updateWishlistDisplay();
         console.log(`Item ${itemId} removed from wishlist`);
     }
+    
 }
 
 /*cart list*/
@@ -186,11 +211,12 @@ function addItem(e){
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
+    removeBtn.id = "removeBtn";
     removeBtn.onclick = function() { removeItem(productId)};
     cartDiv.appendChild(removeBtn);
 
-    let aside = document.getElementById("cart-List");
-    aside.appendChild(cartDiv);
+    let cartSubnav = document.getElementById("cart-List");
+    cartSubnav.appendChild(cartDiv);
 
     cartlist.push(productId);
     updateCartCount();

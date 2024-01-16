@@ -49,28 +49,22 @@ function addToWishlist(itemId) {
 
 function updateWishlistDisplay() {
     const wishlistItemsContainer = document.getElementById('wishlistItems');
-    
     wishlistItemsContainer.innerHTML = '';
- 
 
     if (wishlist.length > 0) {
         wishlist.forEach(itemId => {
             const itemDiv = document.getElementById(itemId).cloneNode(true);
-            const buttonContainer = document.createElement('div');
             const icons = document.querySelector(`.heart-icon[data-item-id="${itemId}"]`);
-
-
-
+            
             itemDiv.classList.add('wishlist-item');
+            const buttonContainer = document.createElement('div');
             buttonContainer.classList.add('buttonContainer');
-           
 
             const addItemBtn = document.createElement('button');
             addItemBtn.textContent = 'Add to cart';
             addItemBtn.id = "addItemBtn";
             addItemBtn.onclick = function(){
                 addToCart(itemId);
-                
                 icons.style.color='';
                 icons.style.opacity='0.5';
 
@@ -80,7 +74,7 @@ function updateWishlistDisplay() {
             removeBtn.textContent = 'Remove';
             removeBtn.id = "removeBtn";
             removeBtn.onclick = function() {
-                deleteItem(itemId); 
+                deleteItem(itemId);
                 icons.style.color='';
                 icons.style.opacity='0.5';
             };
@@ -143,7 +137,6 @@ function addToCart(itemId) {
         console.log('wishlist: ', wishlist.length);
         console.log(`Item ${itemId} added to the cart and removed from the wishlist`);
 
-
         updateEmptyWishlistMessage();
         updatePoint();
         updateEmptyCartMessage();
@@ -155,7 +148,6 @@ function addToCart(itemId) {
 
 function deleteItem(itemId) {
     const index = wishlist.indexOf(itemId);
-
     if (index !== -1) {
         wishlist.splice(index, 1);
         updateWishlistDisplay();
@@ -211,7 +203,7 @@ function addItem(e){
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
-    removeBtn.id = "removeBtn";
+    removeBtn.id = "removeBtnCart";
     removeBtn.onclick = function() { removeItem(productId)};
     cartDiv.appendChild(removeBtn);
 

@@ -71,18 +71,37 @@ h1{
 
 /*Logo*/
 
+.humburgerIcon{
+    visibility: hidden;
+    display: flex;
+    font-size: 30px;
+    left: 0;
+    cursor: pointer;
+}
+.close{
+    visibility: hidden;
+    font-size: 20px;
+    cursor: pointer;
+    top: 100%;
+    left: 17rem;
+    z-index: 1;
+    position: absolute;
+}
+
 .logo {
-    height: auto;
-    max-width: 100%;
+    display: flex;
     align-items: center;
     text-align: center;
+    height: auto;
+    max-width: 100%;
 }
 .logo img {
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     height: auto;
     max-width: 15rem;
-    margin-left: 1rem;
 }
 
 /*nav bar*/
@@ -144,6 +163,7 @@ li a:hover {
 }
 
 .subnav ul {
+    background-color: #0d8348;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -275,7 +295,6 @@ nav ul li:hover .subnav ul li{
     align-items: center;
     padding: 7px 10px;
     margin-right: 1rem;
-    background-color: #0d8348;
 }
 
 .user,
@@ -1307,6 +1326,7 @@ footer img {
     .logo img {
         display: flex;
         justify-content: center;
+        align-items: center;
         height: auto;
         max-width: 12rem;
         /* margin-left: 1rem; */
@@ -1337,7 +1357,6 @@ footer img {
         align-items: center;
         padding: 5px 8px;
         margin-right: 1rem;
-        background-color: #0d8348;
     }
     .user,
     .like{
@@ -1368,6 +1387,7 @@ footer img {
         height: 200px;
     }
  }
+
  @media (max-width:840px){
     .template img {
         display: flex;
@@ -1377,6 +1397,82 @@ footer img {
         height: 180px;
     }
  }
+
+ @media (max-width: 992px){
+    .humburgerIcon{
+        visibility: visible;
+        margin-right: 1rem;
+    }
+    .content{
+        visibility: hidden;
+    }
+    nav ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+        padding: 0;
+        max-width: 30%;
+        height: 80vh;
+        left: 0;
+        right: 0;
+        top: 100%;
+        /* margin-left: 100vh; */
+        backdrop-filter: blur(7px) ;
+        background-color: rgba(255, 255, 255, 0.20);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);        
+        /* background-color: #fff; */
+        list-style: none;
+        }
+        .subnav{
+            flex-direction: row;
+            width: 0;
+            height: 100vh;
+            transition: width 0.3s ease-in-out;
+            
+        }
+
+       
+        nav ul li:hover .subnav {
+        top: 0;
+        left: 100%;
+        width: 100vh;
+        height: 100%;
+        }  
+
+        nav ul li:hover .subnav ul li{
+            width: 50%;
+            height: auto;
+            padding: 5px;
+            margin-top: 0;
+            margin-right: 0.5rem;
+        }
+
+        .productsPic img {
+            display: flex;
+            margin-left: 23rem;
+            width: 50%;
+            height: 530px;
+        }
+
+         .subnav .line{
+            display: flex;
+            border-top: 1px solid black;
+            height: 0;
+            width: 10rem;
+            position:absolute;
+            left: 15%;
+            margin-top: 1rem;
+        } 
+
+        .subnav ul li a{
+            max-width: 100vh;
+            height: auto;
+            padding: 5px 15px;
+         }
+       
+}
 
 
 

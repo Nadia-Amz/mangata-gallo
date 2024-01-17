@@ -6,6 +6,23 @@ window.addEventListener("scroll", function(){
     nav.classList.toggle ("sticky", this.window.scrollY > 0);
 })
 
+/*Humburger menu*/
+
+const humburgerIcon = document.querySelector('.humburgerIcon');
+const content = document.querySelector('.content');
+const Close = document.querySelector('.close');
+
+    humburgerIcon.addEventListener('click',() =>{
+        content.style.visibility = 'visible';
+        Close.style.visibility = 'visible';
+    });
+
+  Close.addEventListener('click', () =>{
+        content.style.visibility = 'hidden';
+        Close.style.visibility = 'hidden';
+
+    })
+
 /*heart icon*/
 
     const icons = document.querySelectorAll('.heart-icon');

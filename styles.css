@@ -80,12 +80,13 @@ h1{
 }
 .close{
     visibility: hidden;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     top: 100%;
     left: 17rem;
     z-index: 1;
     position: absolute;
+    opacity: 0.5;
 }
 
 .logo {
@@ -163,15 +164,14 @@ li a:hover {
 }
 
 .subnav ul {
-    background-color: #0d8348;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: auto;
-    flex: 1 0 20%;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    /* flex: 1 0 20%; */
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
 }
 .subnav ul li a{
    display: flex;
@@ -433,6 +433,17 @@ form{
     align-items: center;
     width: 100%;
     height: 500px;
+}
+.loginPic{
+    display: flex;
+    justify-content: space-between;
+}
+.loginPic img{
+    display: flex;
+    margin-right: 5rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .sign-in {
@@ -1399,6 +1410,9 @@ footer img {
  }
 
  @media (max-width: 992px){
+    .loginPic img{
+        height: 500px;
+    }
     .humburgerIcon{
         visibility: visible;
         margin-right: 1rem;
@@ -1406,6 +1420,7 @@ footer img {
     .content{
         visibility: hidden;
     }
+
     nav ul {
         position: absolute;
         display: flex;
@@ -1418,60 +1433,89 @@ footer img {
         left: 0;
         right: 0;
         top: 100%;
-        /* margin-left: 100vh; */
         backdrop-filter: blur(7px) ;
         background-color: rgba(255, 255, 255, 0.20);
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);        
-        /* background-color: #fff; */
         list-style: none;
+        
         }
+        
+        
         .subnav{
+            
             flex-direction: row;
             width: 0;
-            height: 100vh;
+            height: 100%;
             transition: width 0.3s ease-in-out;
             
+        }
+        .subnav ul{
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: auto;
+            top: 0;
+            margin-left: 5rem;
+            margin-top: 3rem;
+            /* position: absolute; */
         }
 
        
         nav ul li:hover .subnav {
-        top: 0;
-        left: 100%;
-        width: 100vh;
-        height: 100%;
+            flex-direction: column;
+            top: 0;
+            left: 100%;
+            width: 700px;
+            height: 100%;
         }  
 
         nav ul li:hover .subnav ul li{
-            width: 50%;
+            /* background-color: tomato; */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
             height: auto;
-            padding: 5px;
-            margin-top: 0;
-            margin-right: 0.5rem;
+            /* padding: 5px; */
+            /* margin-top: 0; */
         }
 
         .productsPic img {
             display: flex;
             margin-left: 23rem;
             width: 50%;
-            height: 530px;
+            height: 590px;
+            top: 0;
+            /* position: absolute; */
         }
 
          .subnav .line{
             display: flex;
+            justify-content: center;
             border-top: 1px solid black;
             height: 0;
-            width: 10rem;
+            width: 8rem;
             position:absolute;
-            left: 15%;
-            margin-top: 1rem;
+            left: 18%;
+            bottom: 21rem;
+            /* margin-top: 1rem; */
         } 
 
-        .subnav ul li a{
-            max-width: 100vh;
+        /* .subnav ul li a{
+            max-width: 100%;
             height: auto;
             padding: 5px 15px;
-         }
-       
+         } */
+         .video-loop{
+           max-width: 100%;
+
+        }
+        .more-info{
+            top: 10rem;
+            margin-left: 8rem;
+            
+        }
 }
 
 

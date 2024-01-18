@@ -12,6 +12,12 @@ const humburgerIcon = document.querySelector('.humburgerIcon');
 const content = document.querySelector('.content');
 const Close = document.querySelector('.close');
 
+window.addEventListener('resize', function() {
+    if(window.innerWidth > 992){
+        content.style.visibility = 'visible';
+    }
+});
+
     humburgerIcon.addEventListener('click',() =>{
         content.style.visibility = 'visible';
         Close.style.visibility = 'visible';

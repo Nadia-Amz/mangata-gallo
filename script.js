@@ -15,6 +15,10 @@ const Close = document.querySelector('.close');
 window.addEventListener('resize', function() {
     if(window.innerWidth > 992){
         content.style.visibility = 'visible';
+        Close.style.visibility = 'hidden';
+    }else{
+        Close.style.visibility = 'visible';
+
     }
 });
 

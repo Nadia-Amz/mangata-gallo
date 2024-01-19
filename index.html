@@ -44,6 +44,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Products.html">Products</a>
+                        <ion-icon class="forwardSign" name="chevron-forward-outline"></ion-icon>
             <div class="subnav">
                 <ul>
                     <h1>View by category</h1>
@@ -67,6 +68,7 @@
             </div>
                 </li>
                 <li><a href="gifts">Gifts</a>
+                    <ion-icon class="forwardSign" name="chevron-forward-outline"></ion-icon>
             <div class="subnav">
                 <ul>
                     <h1>Gifts For...</h1>
@@ -89,6 +91,7 @@
             </div>
                     </li>
                     <li><a href="watches">Watches</a>
+                        <ion-icon class="forwardSign" name="chevron-forward-outline"></ion-icon>
             <div class="subnav">
                 <ul>
                     <h1>Browse by category</h1>
@@ -109,6 +112,7 @@
             </div>
                 </li>
                     <li><a href="engagements and weddings">Engagements & Weddings</a>
+                        <ion-icon class="SignWeeding" name="chevron-forward-outline"></ion-icon>
             <div class="subnav">
                 <ul>
                     <h1>Engagement Rings</h1>
@@ -206,13 +210,16 @@
             <div class="wishlist-container">
                 <div class="wishlist-icon">
                     <div>
-                       <ion-icon class="like" name="heart-circle-outline"></ion-icon>
+                        <ion-icon class="like" name="heart-circle-outline"></ion-icon>
+                        <div class="point"></div>
                     </div>
                 </div>
-                <div class="sidebar-container">
-                    <div class="Bar">
+                <div class="sidebar-container" >
+                    <div class="Bar" id="wish-List">
                         <h1>Your Wishlist</h1>
-                        <p>Your Wishlist Is Empty</p>
+                        <p id="wishlist-msg">Your Wishlist Is Empty</p>
+    
+                        <div  id="wishlistItems"></div>
                     </div>
                 </div>
             </div>
@@ -220,20 +227,29 @@
             <div class="cart-container">
                 <div class="bag-icon">
                     <div>
-                        <ion-icon class ="bag" name="bag-outline"></ion-icon>           
+                        <ion-icon class ="bag" name="bag-outline"></ion-icon>
+                        <p id="count">0</p>
                     </div>
                 </div>
                 <div class="sidebar-container">
-                    <div class="Bar">
+                    <div class="Bar" id="cart-List">
                         <h1>Your Shopping Cart</h1>
-                        <p>Your Cart Is Empty</p>
-                            <!-- <div class="calcul">
-                                <p>Total</p>
-                                <p id="total">$ 0.00</p>
-                            </div> -->
+                        <p id="cart-msg">Your Cart Is Empty</p>
+                      
+                        <div class="checkout-btn">
+                            <button onclick="checkCartList()" type="submit" id="checkoutBtn">Checkout</button>
+                        </div>
+                        <div id="cartlistItems"></div>
                     </div>
+                    <div class="alert" id="alert-checkout">
+                        <div class="msg-alert">
+                            <ion-icon class="check-icon" name="checkmark-circle-outline"></ion-icon>
+                            <p>Done ! </p>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
+        </div>
 
              </div>
              </div>

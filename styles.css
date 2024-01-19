@@ -182,34 +182,22 @@ li a:hover {
    padding: 5px 15px;
 }
 
-.productsPic {
-    display: flex;
-    justify-content: space-between;
-}
 
-.productsPic img {
-    display: flex;
-    margin-right: 5rem;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-
-nav ul li:hover .subnav {
+nav ul li:hover .subnav  {
     display: flex;
     justify-content: space-around;
     align-items: center;
     backdrop-filter: blur(7px) ;
     background-color: rgba(255, 255, 255, 0.20);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    top: 80%;
+    top: 65%;
     height: 400px;
     opacity: 1;
     visibility: visible;
 }
 
 nav ul li:hover .subnav ul li{
+    display: inline;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -228,7 +216,36 @@ nav ul li:hover .subnav ul li{
     left: 27%;
     margin-top: 3rem;
 }
+.productsPic {
+    display: flex;
+    justify-content: space-between;
+}
 
+.productsPic img {
+    display: flex;
+    margin-right: 5rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.forwardSign{
+    visibility: hidden;
+    position: absolute;
+    display: inline-flex;
+    width: 50%;
+    margin-top: 0.3rem;
+    opacity: 0.5;
+    /* background-color: #0d8348; */
+}
+.SignWeeding{
+    visibility: hidden;
+    position: absolute;
+    display: inline-flex;
+    width: 30%;
+    margin-top: 0.3rem;
+    opacity: 0.5;
+    /* background-color:tomato; */
+}
 
 .search{
     display: flex;
@@ -1433,43 +1450,40 @@ footer img {
         left: 0;
         right: 0;
         top: 100%;
-        backdrop-filter: blur(7px) ;
-        background-color: rgba(255, 255, 255, 0.20);
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);        
+        background-color: #fff;
+        /* backdrop-filter: blur(7px) ;
+        background-color: rgba(255, 255, 255, 0.20); */
+        /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);*/
         list-style: none;
-        
+
         }
-        
-        
         .subnav{
-            
             flex-direction: row;
             width: 0;
             height: 100%;
             transition: width 0.3s ease-in-out;
-            
+
         }
         .subnav ul{
-            background-color: transparent;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             width: 100%;
             height: auto;
             top: 0;
-            margin-left: 5rem;
+            margin-right: 25rem;
             margin-top: 3rem;
-            /* position: absolute; */
+            position: relative;
         }
-
-       
         nav ul li:hover .subnav {
+            overflow: hidden;
+            background-color: #fff;
             flex-direction: column;
             top: 0;
             left: 100%;
             width: 700px;
             height: 100%;
-        }  
+        }
 
         nav ul li:hover .subnav ul li{
             /* background-color: tomato; */
@@ -1477,36 +1491,47 @@ footer img {
             justify-content: space-between;
             width: 100%;
             height: auto;
-            /* padding: 5px; */
-            /* margin-top: 0; */
+            padding: 5px;
+            margin-top: 0;
         }
 
         .productsPic img {
             display: flex;
-            margin-left: 23rem;
+            /* margin-left: 23rem; */
             width: 50%;
             height: 590px;
             top: 0;
-            /* position: absolute; */
+            position: absolute;
         }
 
          .subnav .line{
-            display: flex;
+            visibility: hidden;
+            /* display: flex;
             justify-content: center;
             border-top: 1px solid black;
             height: 0;
             width: 8rem;
             position:absolute;
             left: 18%;
-            bottom: 21rem;
-            /* margin-top: 1rem; */
+            /* bottom: 21rem; */
+            /* margin-top: 1rem;  */
         } 
 
-        /* .subnav ul li a{
+        .subnav ul li a{
             max-width: 100%;
             height: auto;
-            padding: 5px 15px;
-         } */
+            padding: 10px 5px;
+         }
+         nav ul li:hover .forwardSign{
+            visibility: visible;
+        }
+        nav ul li:hover .SignWeeding{
+            visibility: visible;
+        }
+        .point{
+            bottom: 60%;
+            right: 4rem;
+        }
          .video-loop{
            max-width: 100%;
 

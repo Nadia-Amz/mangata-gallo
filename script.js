@@ -146,12 +146,19 @@ function addToCart(itemId) {
         // Clone the wishlist item or create a new cart item
         const cartItem = wishlistItem.cloneNode(true);
         cartItem.id = 'cart' + itemId;
+        const removeButton = document.createElement('button');
+              removeButton.textContent = 'Remove';
+              removeButton.id = "removeButton";
+              removeButton.onclick = function() {
+                removeFromCart(itemId); 
+            };
 
         // Add or update any specific classes or attributes for cart items
         cartItem.classList.add('cart-div');
-
+        cartItem.appendChild(removeButton);
         // Append the cart item to the cart container
         cartItemsContainer.appendChild(cartItem);
+
 
         cartlist.push(cartItem);
 
@@ -182,6 +189,19 @@ function deleteItem(itemId) {
     }
     
 }
+function removeFromCart(itemId){
+    item = document.getElementById('cart'+ itemId);
+    const index = cartlist.indexOf(itemId);
+    if(item){
+        item.remove();
+    }
+        cartlist.splice(index, 1);
+        console.log("cartlist", cartlist.length);
+        updateCartCount();
+        updateEmptyCartMessage();
+        console.log(`Item ${itemId} removed from cartlist`);
+}
+
 
 /*cart list*/
  
@@ -245,8 +265,8 @@ function addItem(e){
 function removeItem(productId){
     const product = document.getElementById("cart" +productId);
     const index = cartlist.indexOf(productId);
-    product.remove();
-    if (index !== -1) {
+    if (index !== -1 && product) {
+        product.remove();
         cartlist.splice(index, 1);
         updateCartCount();
         console.log(`Item ${productId} removed from cartlist`);
@@ -254,15 +274,21 @@ function removeItem(productId){
     }
 }
 
-function checkCartList() {
+function checkoutBtn() {
 
     if (cartlist.length > 0) {
 
         const alertElement = document.getElementById('alert-checkout');
         alertElement.style.visibility = 'visible';
-
         setTimeout(() => {
             alertElement.style.visibility = 'hidden';
+            for (const productId of cartlist ) {
+                removeItem(productId);
+                const itemId = document.getElementById(productId);
+                removeFromCart(itemId);
+                console.log('called');
+            }
+        
         }, 1000);
     }else{
         console.log('cart is empty');

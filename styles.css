@@ -1296,6 +1296,10 @@ footer img {
     padding: 2px 10px;
     margin-right: 1rem;
 }
+.wishlist-item .add-to-card{
+    display: none;
+}
+
 .cart-item .add-to-card{
     display: none;
 }
@@ -1306,16 +1310,16 @@ footer img {
     margin-left: -8rem;
 
 }
-.wishlist-item .add-to-card{
-    visibility: hidden;
+.cart-div #addItemBtn, 
+#removeBtn{
+    display: none;
 }
-
-.cart-div #addItemBtn{
-    visibility: hidden;
-}
-.cart-div #removeBtn{
-    /* visibility: hidden; */
-    margin-left: 5rem;
+.cart-div #removeButton{
+    text-align: center;
+    padding: 2px 10px;
+    margin-top: 11rem;
+    margin-left: -8rem;
+    margin-right: 5rem;
 }
 
 .buttonContainer{

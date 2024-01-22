@@ -13,25 +13,26 @@ const content = document.querySelector('.content');
 const Close = document.querySelector('.close');
 
 window.addEventListener('resize', function() {
+
     if(window.innerWidth > 992){
         content.style.visibility = 'visible';
         Close.style.visibility = 'hidden';
     }else{
         Close.style.visibility = 'visible';
-
     }
 });
 
-    humburgerIcon.addEventListener('click',() =>{
-        content.style.visibility = 'visible';
-        Close.style.visibility = 'visible';
-    });
+humburgerIcon.addEventListener('click',() =>{
+    content.style.visibility = 'visible';
+    Close.style.visibility = 'visible';
+});
 
-  Close.addEventListener('click', () =>{
-        content.style.visibility = 'hidden';
-        Close.style.visibility = 'hidden';
+Close.addEventListener('click', () =>{
+    content.style.visibility = 'hidden';
+    Close.style.visibility = 'hidden';
 
-    })
+});
+
 
 /*heart icon*/
 

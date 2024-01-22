@@ -1292,6 +1292,7 @@ footer img {
 }
 .wishlist-item #addItemBtn,
 #removeBtn{
+    /* background-color: #0d8348; */
     align-items: center;
     padding: 2px 10px;
     margin-right: 1rem;
@@ -1308,7 +1309,6 @@ footer img {
     padding: 2px 10px;
     margin-top: 11rem;
     margin-left: -8rem;
-
 }
 .cart-div #addItemBtn, 
 #removeBtn{
@@ -1434,6 +1434,45 @@ footer img {
     .loginPic img{
         height: 500px;
     }
+    .wishlist-item,
+    .cart-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 220px;
+    }
+    .wishlist-item #pic2,
+    .cart-item #pic2{
+        height: 130px;
+        width: 130px;
+    }
+    .wishlist-item,
+    .cart-item .descPrice{
+        display: flex;
+        justify-content: center;
+        /* background-color: tomato; */
+        width: 100%;
+        height: auto;
+        font-size: small;
+        align-items: center;
+    }
+
+    .buttonContainer{
+    /* background-color: #0d8348; */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    }
+    .cart-item button{
+        margin-top: 0.5rem;
+        margin-left: 0rem;
+    }
+    .cart-div #removeButton{
+        margin-top: -2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
     .humburgerIcon{
         visibility: visible;
         margin-right: 1rem;
@@ -1455,9 +1494,6 @@ footer img {
         right: 0;
         top: 100%;
         background-color: #fff;
-        /* backdrop-filter: blur(7px) ;
-        background-color: rgba(255, 255, 255, 0.20); */
-        /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);*/
         list-style: none;
 
         }
@@ -1510,15 +1546,6 @@ footer img {
 
          .subnav .line{
             visibility: hidden;
-            /* display: flex;
-            justify-content: center;
-            border-top: 1px solid black;
-            height: 0;
-            width: 8rem;
-            position:absolute;
-            left: 18%;
-            /* bottom: 21rem; */
-            /* margin-top: 1rem;  */
         } 
 
         .subnav ul li a{
@@ -1543,7 +1570,6 @@ footer img {
         .more-info{
             top: 10rem;
             margin-left: 8rem;
-            
         }
 }
 

@@ -221,6 +221,7 @@ nav ul li:hover .subnav ul li{
     left: 27%;
     margin-top: 3rem;
 }
+
 .productsPic {
     display: flex;
     justify-content: space-between;
@@ -498,7 +499,6 @@ form{
     margin-top: 1rem;
     transition: max-height 0.5s;
 }
-
 .in ion-icon{
     position: absolute;
     margin-left: 28rem;
@@ -927,7 +927,7 @@ label {
 .sectionTwo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 3rem;
     align-items: center;
 }
@@ -938,7 +938,12 @@ label {
     align-items: center;
     max-width: 100%;
     height: auto;
+    margin-right: 1rem;
+}
 
+.TwoIn1{
+    display: flex;
+    flex-direction: row;
 }
 
 .template {
@@ -965,7 +970,6 @@ label {
     opacity: 0.75;
     text-align: center;
     margin-top: 1rem;
-
 }
 
 .template a:hover{
@@ -995,7 +999,6 @@ label {
     top: 20rem;
     max-width: 70%;
     margin-left: 12rem;
-    
 }
 
 .more-info h1,
@@ -1339,15 +1342,14 @@ footer img {
     margin-left: -14rem;
 }
 
- /*MEDIA BREAKPOINTS*/
+ /*MEDIA BREAKPOINTS HOME PAGE*/
 
  @media (max-width:1400px){
-    .productsPic img {
-        display: flex;
-        margin-right: 5rem;
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
+    .subnav .line{
+        left: 30%;
+    }
+    .sidebar-container .Bar{
+        width: 20%;
     }
     .template img {
         display: flex;
@@ -1357,6 +1359,28 @@ footer img {
         height: 300px;
     }
  }
+ @media (max-width:1300px){
+    .subnav .line{
+        left: 26%;
+    }
+    .video-loop{
+        max-width: 100%;
+     }
+     .more-info{
+         top: 15rem;
+         margin-left: 8rem;
+     }
+    
+    .in ion-icon{
+       margin-left: 27rem;
+    }
+ }
+ @media (max-width:1270px){
+    .in ion-icon{
+       margin-left: 25rem;
+    }
+ }
+
 
  @media (max-width:1234px){
     .logo img {
@@ -1365,26 +1389,16 @@ footer img {
         align-items: center;
         height: auto;
         max-width: 12rem;
-        /* margin-left: 1rem; */
     }
     nav ul {
         padding: 5px 10px ;
-    
     }
     
     nav li a {
         font-size: 14px;
     }
-
-    .productsPic img {
-        display: flex;
-        margin-right: 5rem;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
     .subnav .line{
-        left: 30%;
+        left: 25%;
     }
     .cart{
         display: flex;
@@ -1399,9 +1413,7 @@ footer img {
     font-size: 1.2rem;
     }
     .bag{
-      
         font-size: 1.1rem;
-      
     }
     .bnt1{
         font-size: 1.2rem;
@@ -1414,6 +1426,31 @@ footer img {
         height: 250px;
     }
  }
+
+ @media (max-width:1210px){
+    .in ion-icon{
+       margin-left: 24rem;
+    }
+ }
+
+ 
+ @media (max-width:1170px){
+    .in ion-icon{
+       margin-left: 22rem;
+    }
+ }
+
+ @media (max-width:1100px){
+    .in ion-icon{
+       margin-left: 20rem;
+    }
+ }
+
+ @media (max-width:1040px){
+    .in ion-icon{
+       margin-left: 19rem;
+    }
+ }
  @media (max-width:1030px){
     .template img {
         display: flex;
@@ -1423,63 +1460,40 @@ footer img {
         height: 200px;
     }
  }
+ 
+ @media (max-width:1000px){
 
- @media (max-width:840px){
-    .template img {
+    .productsPic img {
         display: flex;
-        justify-content: center;
-        align-content: center;
-        width: 180px;
-        height: 180px;
+        margin-left: 7rem;
+        width: 100%;
+        height: 500px;
+        /* margin-right: 0rem; */
+        /* top: 0; */
+        position: relative;
     }
- }
+    .subnav .line{
+        left: 24%;
+        height: 20%;
+    }
+    .in ion-icon{
+           margin-left: 17rem;
+    }
+}
 
  @media (max-width: 992px){
     .loginPic img{
         height: 500px;
     }
-    .wishlist-item,
-    .cart-item{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 220px;
-    }
-    .wishlist-item #pic2,
-    .cart-item #pic2{
-        height: 130px;
-        width: 130px;
-    }
-    .wishlist-item,
-    .cart-item .descPrice{
-        display: flex;
-        justify-content: center;
-        /* background-color: tomato; */
-        width: 100%;
-        height: auto;
-        font-size: small;
-        align-items: center;
-    }
-
-    .buttonContainer{
-    /* background-color: #0d8348; */
-    flex-direction: column;
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    }
-    .cart-item button{
-        margin-top: 0.5rem;
-        margin-left: 0rem;
-    }
-    .cart-div #removeButton{
-        margin-top: -2rem;
-        margin-left: 3rem;
-        margin-right: 3rem;
+    .sidebar-container .Bar{
+        width: 30%;
     }
     .humburgerIcon{
         visibility: visible;
         margin-right: 1rem;
+    }
+    .close{
+        top: 0rem;
     }
     .content{
         visibility: hidden;
@@ -1541,8 +1555,8 @@ footer img {
 
         .productsPic img {
             display: flex;
-            /* margin-left: 23rem; */
-            width: 50%;
+            margin-left: 0rem;
+            width: 70%;
             height: 590px;
             top: 0;
             position: absolute;
@@ -1563,64 +1577,85 @@ footer img {
         nav ul li:hover .SignWeeding{
             visibility: visible;
         }
-        .point{
-            bottom: 60%;
-            right: 4rem;
-        }
-        #pic2{
-            width: 230px;
-            height: 230px;
-        }
          .video-loop{
            max-width: 100%;
-
         }
         .more-info{
             top: 10rem;
             margin-left: 8rem;
         }
 }
-@media (max-width: 950px){
-    #pic2{
-        width: 220px;
-        height: 220px;
+@media (max-width:950px){
+    .about li{
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
-    .heart-icon{
-        margin-top: 0.3rem;
-        margin-right: 0.3rem;
-        
+ }
+@media (max-width:920px){
+    .in ion-icon{
+       margin-left: 16rem;
     }
-    .item1 p{
-        font-size: 15px;
+    .in span{
+        margin-right: 1rem;
     }
-    
-    .item1 button{
-        padding: 2px 5px;
+    .productsPic img {
+        margin-left: 0rem;
+        width: 50%;
     }
-}
+ }
+
+ @media (max-width:880px){
+    .in ion-icon{
+       margin-left: 24rem;
+    }
+    .in span{
+        margin-right: 10rem;
+    }
+    .loginPic img{
+        display: none;  
+    }
+ }
+
+@media (max-width:840px){
+    .template img {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 180px;
+        height: 180px;
+    }
+    .in ion-icon{
+        margin-left: 23rem;
+    }
+ }
+ @media (max-width:820px){
+    .productsPic img {
+        margin-left: 0rem;
+        width: 40%;
+    }
+ }
+
+ @media (max-width: 790px){
+    .in ion-icon{
+        margin-left: 21rem;
+    }
+ }
 
 @media (max-width: 768px){
+    .sidebar-container .Bar{
+        width: 40%;
+    }
+    .article img{
+        max-width: 50%;
+    }
+    .more-info{
+        top: 5rem;
+        margin-left: 5rem;
+    }
     .parag p {
         width: 20rem;
         margin-top: 1rem;
         font-size: 12px;
-    }
-    #pic2{
-        width: 180px;
-        height: 180px;
-    }
-    .heart-icon{
-        font-size: 20px;
-        margin-top: 0.3rem;
-        margin-right: 0.3rem;
-        
-    }
-    .item1 p{
-        font-size: 13px;
-    }
-    
-    .item1 button{
-        padding: 2px 5px;
     }
     nav ul li:hover .subnav {
         overflow: hidden;
@@ -1646,40 +1681,39 @@ footer img {
         margin-top: 1rem;
     }
     .in span{
-        margin-right: 0;
+        margin-right: 9rem;
     }
-    
-    .in ion-icon{
-       margin-left: 12rem;
-    
-    }    
     input {
         padding: 10px 25px;
         font-size: 15px;
     }
+    .template img {
+        width: 160px;
+        height: 160px;
+    }
     .Gift-area{
         height: 400px;
     }
-    
     .Gift-area img{
         width: 100%;
         height: 400px;
     }
     .info p{
         padding: 10px;
-        font-size: 13px;
-    
+      font-size: 13px;
+      text-align: center;
+
     }
     .info h1{
         font-size: small;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     
     .info button{
         font-size: 15px;
         padding: 5px 15px;
         border-radius: 10px;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
     footer img {
         width: 7rem;
@@ -1693,6 +1727,212 @@ footer img {
         margin-right: 1rem;
     }
 }
+@media (max-width: 740px){
+    .sectionTwo {
+        display: flex;
+        flex-direction: column;
+    }
+    .template img {
+        width: 340px;
+        height: 340px;
+    }
+    
+    .template a{
+        margin-bottom: 1rem;
+    }
+    .more-info{
+        font-size: 15px;
+    }
+   
+}
+@media (max-width: 727px){
+    .template img {
+        width: 300px;
+        height: 300px;
+    }
+    nav ul {
+        padding: 5px 5px ;
+    }
+}
+@media (max-width: 692px){
+    .about li{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+@media (max-width: 647px){
+     .template img {
+        width: 270px;
+        height: 270px;
+    }
+    .social li {
+        font-size: 1.5rem;
+    }
+    .more-info button{
+        width: 25%;
+        }
+    .productsPic img {
+          display: none;
+        }
+    .subnav ul{
+            
+            justify-content: center;
+            margin-right: 20rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+    nav ul li:hover .subnav {
+            overflow: hidden;
+            background-color: #fff;
+            flex-direction: column;
+            top: 0;
+            left: 100%;
+            width: 700px;
+            height: 100%;
+        }
+
+    nav ul li:hover .subnav ul li{
+            /* background-color: tomato; */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            margin-top: 0;
+        }
+        nav ul {
+            max-width: 40%;
+            }
+}
+@media (max-width: 595px){
+    .contactArea{
+        flex-direction: column;
+    }
+    .about li{
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .template img {
+        width: 250px;
+        height: 250px;
+    }
+    .more-info{
+        font-size: 13px;
+        margin-top: 0.5rem;
+        margin-left: 2rem;
+
+    }
+}
+@media (max-width: 550px){
+    .article img{
+        max-width: 50%;
+        height: 500px;
+    }
+    .info {
+        padding: 15px;
+    
+    }
+    .template img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/*bracelets break points */
+
+@media (max-width: 992px){
+
+.wishlist-item,
+    .cart-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 220px;
+    }
+    .wishlist-item #pic2,
+    .cart-item #pic2{
+        height: 130px;
+        width: 130px;
+    }
+    .wishlist-item,
+    .cart-item .descPrice{
+        display: flex;
+        justify-content: center;
+        /* background-color: tomato; */
+        width: 100%;
+        height: auto;
+        font-size: small;
+        align-items: center;
+    }
+
+    .buttonContainer{
+    /* background-color: #0d8348; */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    }
+    .cart-item button{
+        margin-top: 0.5rem;
+        margin-left: 0rem;
+    }
+    .cart-div #removeButton{
+        margin-top: -2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    .point{
+            bottom: 60%;
+            right: 4rem;
+        }
+    #pic2{
+            width: 230px;
+            height: 230px;
+        }
+}
+
+@media (max-width: 950px){
+    #pic2{
+        width: 220px;
+        height: 220px;
+    }
+    .heart-icon{
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+        
+    }
+    .item1 p{
+        font-size: 15px;
+    }
+    
+    .item1 button{
+        padding: 2px 5px;
+    }
+}
+
+@media (max-width: 768px){
+
+  #pic2{
+        width: 180px;
+        height: 180px;
+    }
+    .heart-icon{
+        font-size: 20px;
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+        
+    }
+    .item1 p{
+        font-size: 13px;
+    }
+    
+    .item1 button{
+        padding: 2px 5px;
+    }
+}
+
 
 
 

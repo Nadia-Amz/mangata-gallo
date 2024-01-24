@@ -1743,6 +1743,12 @@ footer img {
     .more-info{
         font-size: 15px;
     }
+    .in span{
+        margin-right: 8rem;
+    }
+    .in ion-icon{
+        margin-left: 20rem;
+    }
    
 }
 @media (max-width: 727px){
@@ -1759,7 +1765,22 @@ footer img {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
+    .in span{
+        margin-right: 7rem;
+    }
+    .in ion-icon{
+        margin-left: 19rem;
+    }
 }
+@media (max-width: 662px){
+    .in span{
+        margin-right: 7rem;
+    }
+    .in ion-icon{
+        margin-left: 18rem;
+    }
+}
+
 @media (max-width: 647px){
      .template img {
         width: 270px;
@@ -1803,8 +1824,16 @@ footer img {
         nav ul {
             max-width: 40%;
             }
+           
+            .in ion-icon{
+                margin-left: 17rem;
+            }
 }
+
 @media (max-width: 595px){
+    .in ion-icon{
+        margin-left: 15rem;
+    }
     .contactArea{
         flex-direction: column;
     }
@@ -1822,7 +1851,6 @@ footer img {
         font-size: 13px;
         margin-top: 0.5rem;
         margin-left: 2rem;
-
     }
 }
 @media (max-width: 550px){
@@ -1838,7 +1866,35 @@ footer img {
         width: 200px;
         height: 200px;
     }
+    .in span{
+        margin-right: 6rem;
+    }
+    .in ion-icon{
+        margin-left: 14rem;
+    }
 }
+@media (max-width: 500px){
+    .in{
+        width: 90%;       
+    }
+    .in ion-icon{
+        margin-left: 24rem;
+    }
+    .in span{
+        margin-right: 15rem;
+    }
+    .btn-{
+        width: 90%;
+    
+    }
+    .option {
+        width: 90%;
+    }
+
+}
+
+
+
 
 /*bracelets break points */
 

@@ -140,7 +140,6 @@ nav ul {
     list-style: none;
     text-align: center;
     padding: 5px 15px ;
-
 }
 
 li a {
@@ -319,6 +318,11 @@ nav ul li:hover .subnav ul li{
     padding: 7px 10px;
     margin-right: 1rem;
 }
+.wishlist-icon{
+    display: flex;
+    width: 70%;
+    position: sticky;
+}
 
 .user,
 .like{
@@ -370,11 +374,15 @@ nav ul li:hover .subnav ul li{
     height: 5px;
     border-radius: 50%;
     position: absolute;
-    bottom: 60%;
-    right: 4.3rem;
+    bottom: 75%;
+    right: 0.2rem;
     visibility: hidden;
 }
-
+.bag-icon{
+    display: flex;
+    width: 100%;
+    position: sticky;
+}
 
 .bag{
     border: 0 ;
@@ -417,8 +425,8 @@ nav ul li:hover .subnav ul li{
     font-weight: bolder;
     border-radius: 50%;
     position: absolute;
-    bottom: 60%;
-    right: 1.5rem;
+    bottom: 70%;
+    right: -0.3rem;
 }
 
 /*LOGIN*/
@@ -819,7 +827,6 @@ label {
 .article img{
     max-width: 100%;
     height: 100vh;
-
 }
 .info {
     display: flex;
@@ -829,7 +836,6 @@ label {
     padding: 20px;
     max-width: 50%;
     height: auto;
-
 }
 .info p{
     padding: 20px;
@@ -1114,13 +1120,11 @@ footer{
     margin-top: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
-
 }
 .about a{
     color: black;
     font-size: medium;
     opacity: 0.75;
-    
 }
 .about a:hover{
     cursor: pointer;
@@ -1796,7 +1800,6 @@ footer img {
           display: none;
         }
     .subnav ul{
-            
             justify-content: center;
             margin-right: 20rem;
             margin-top: 3rem;
@@ -1812,7 +1815,7 @@ footer img {
             height: 100%;
         }
 
-    nav ul li:hover .subnav ul li{
+        nav ul li:hover .subnav ul li{
             /* background-color: tomato; */
             flex-direction: column;
             justify-content: space-between;
@@ -1823,7 +1826,7 @@ footer img {
         }
         nav ul {
             max-width: 40%;
-            }
+        }
            
             .in ion-icon{
                 margin-left: 17rem;
@@ -1890,9 +1893,173 @@ footer img {
     .option {
         width: 90%;
     }
-
+    .sidebar-container .Bar{
+        width: 100%;
+    }
+    .subnav ul{
+        margin-right: 12rem;
+    }
+    nav ul {
+        max-width: 50%;
+    }
+    nav ul li:hover .subnav {
+        width: 400px;
+    }
+    nav ul li:hover .SignWeeding{
+        width: 20%;
+    }
+    .point{
+        top: 0;
+        left: 1rem;
+    }
+    .Heading{
+        margin-top: 3rem;
+    }
+    
+    .Heading h1{
+        font-size: 18px;
+    }
+    
+    .Heading p{
+        width: 100%;
+        font-size: 13px;
+    }
+    .more-info{
+        max-width: 100%;
+        bottom: 4rem;
+    }
+}
+@media (max-width: 450px){
+    .in span{
+        margin-left: 19rem;
+        width: 100%;
+    }
+    .in ion-icon{
+        margin-left: 23rem;
+    }
 }
 
+@media (max-width: 431px){
+    .in ion-icon{
+        margin-left: 22rem;
+    }
+    .search:hover input{
+        width: 100px;
+    }
+    .search input{
+        padding: 2px 5px;
+    }
+    .Heading h1{
+        font-size: 15px;
+    }
+    .Heading button{
+        width: 30%;
+    }
+    .TwoIn1{
+        display: flex;
+        flex-direction: column;
+    }
+    .template img {
+        width: 200px;
+        height: 200px;
+    }
+    .Gift-area img{
+        width: 50%;
+        height: 400px;
+    }
+    nav ul {
+        height: 80vh;
+    }
+    .subnav ul{
+        margin-right: 8rem;
+    }
+    .subnav ul li{
+        padding: 2px;
+    }
+    .subnav ul li a{
+        font-size: small;
+    }
+    .subnav h1{
+        font-size: small;
+    }
+    nav ul li:hover .SignWeeding{
+        width: 10%;
+    }
+    nav ul li:hover .subnav {
+        width: 300px;
+    }
+}
+@media (max-width: 400px){
+    .in ion-icon{
+        margin-left: 20rem;
+    }
+}
+@media (max-width: 413px){
+
+.social li {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+}
+
+@media (max-width: 391px){
+    .logo img {
+        max-width: 10rem;
+    }
+    .humburgerIcon{
+        font-size: 25px;
+    }
+    .user,
+    .like{
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+    }
+    .bag{
+        font-size: 1rem;
+    }
+    .bag::before{
+        width: 70%; 
+        height: 29%; 
+    }
+    .article img{
+        max-width: 50%;
+        height: 500px;
+    }
+    .info {
+        height: 500px;
+        padding: 0px;
+    }
+    .info p{
+        padding: 2px;
+    }
+    .Heading p{
+        width: 90%;
+    }
+    nav ul {
+        height: 80vh;
+    }
+   
+}
+@media (max-width: 370px){
+    .in ion-icon{
+        margin-left: 19rem;
+    }
+}
+@media (max-width: 360px){
+    .logo img {
+        max-width: 9rem;
+    }
+    .humburgerIcon{
+        font-size: 23px;
+    }
+    .more-info p{
+        opacity: 1;
+    }
+    .more-info button{
+        margin-bottom: 1.5rem;
+        width: 30%;
+    }
+}
 
 
 
@@ -1939,10 +2106,6 @@ footer img {
         margin-left: 3rem;
         margin-right: 3rem;
     }
-    .point{
-            bottom: 60%;
-            right: 4rem;
-        }
     #pic2{
             width: 230px;
             height: 230px;
@@ -1967,13 +2130,20 @@ footer img {
         padding: 2px 5px;
     }
 }
-
-@media (max-width: 768px){
-
-  #pic2{
+@media (max-width: 900px){
+    #pic2{
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 830px){
+    #pic2{
         width: 180px;
         height: 180px;
     }
+}
+
+@media (max-width: 768px){
     .heart-icon{
         font-size: 20px;
         margin-top: 0.3rem;
@@ -1987,7 +2157,96 @@ footer img {
     .item1 button{
         padding: 2px 5px;
     }
+    .Cover-area img{
+        height: 400px;
+    }
+    .info-area{
+        padding: 10px;
+    }
 }
+@media (max-width: 750px){
+    #pic2{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 650px){
+    #pic2{
+        width: 130px;
+        height: 130px;
+    }
+}
+@media (max-width: 576px){
+    .info-area{
+        padding: 5px;
+    }
+    #pic2{
+        width: 250px;
+        height: 250px;
+    }
+    .Div1,
+    .Div2,
+    .Div3{
+        flex-direction: column;
+    }
+    .descPrice{
+        margin-right: 2rem;
+    }
+    .item1{
+        backdrop-filter: blur(7px) ;
+        background-color: rgba(255, 255, 255, 0.20);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
+        margin-bottom: 1rem;
+        flex-direction: row;
+        width: 100%;
+    }
+}
+@media (max-width: 520px){
+    .descPrice{
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 490px){
+    .info-area{
+        padding: 5px;
+    }
+    .Cover-area img{
+        height: 300px;
+    }
+    .info-area p{
+        font-size: 13px;
+    }
+    #pic2{
+        width: 220px;
+        height: 220px;
+    }
+    .descPrice{
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 400px){
+    .Cover-area img{
+        height: 200px;
+    }
+    .info-area p{
+        font-size: 10px;
+    }
+    #pic2{
+        width: 200px;
+        height: 200px;
+    }
+    .descPrice{
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 360px){
+    #pic2{
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
 
 
 

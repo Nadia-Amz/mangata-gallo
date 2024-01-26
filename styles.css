@@ -680,6 +680,7 @@ label {
     justify-content: center;
     align-items: center;
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100vh;
     left: 0;
@@ -768,7 +769,6 @@ label {
     margin-bottom: 2rem;
 }
 
-
  .checkout-btn{
     display: flex;
     justify-content: flex-end;
@@ -790,8 +790,6 @@ label {
 .checkout-btn button:hover{
     opacity: 1;
 }
-
-
 
 
 
@@ -1609,15 +1607,23 @@ footer img {
  }
 
  @media (max-width:880px){
+    .in{
+        width: 70%; 
+    }
     .in ion-icon{
-       margin-left: 24rem;
+        margin-left: 36rem;
     }
     .in span{
-        margin-right: 10rem;
+        margin-left: 19rem;
+        width: 100%;
+    }
+    .btn-{
+        width: 70%;
     }
     .loginPic img{
         display: none;  
     }
+   
  }
 
 @media (max-width:840px){
@@ -1629,7 +1635,7 @@ footer img {
         height: 180px;
     }
     .in ion-icon{
-        margin-left: 23rem;
+        margin-left: 34rem;
     }
  }
  @media (max-width:820px){
@@ -1637,11 +1643,24 @@ footer img {
         margin-left: 0rem;
         width: 40%;
     }
+    .in ion-icon{
+        margin-left: 33rem;
+    }
  }
 
  @media (max-width: 790px){
+    .in{
+        width: 80%; 
+    }
     .in ion-icon{
-        margin-left: 21rem;
+        margin-left: 36rem;
+    }
+    .in span{
+        margin-left: 13rem;
+        width: 100%;
+    }
+    .btn-{
+        width: 80%;
     }
  }
 
@@ -1685,7 +1704,7 @@ footer img {
         margin-top: 1rem;
     }
     .in span{
-        margin-right: 9rem;
+        margin-left: 11rem;
     }
     input {
         padding: 10px 25px;
@@ -1747,11 +1766,18 @@ footer img {
     .more-info{
         font-size: 15px;
     }
-    .in span{
-        margin-right: 8rem;
+    .in{
+        width: 90%; 
     }
     .in ion-icon{
-        margin-left: 20rem;
+        margin-left: 39rem;
+    }
+    .in span{
+        margin-left: 7rem;
+        width: 100%;
+    }
+    .btn-{
+        width: 90%;
     }
    
 }
@@ -1763,25 +1789,22 @@ footer img {
     nav ul {
         padding: 5px 5px ;
     }
+    .in ion-icon{
+        margin-left: 38rem;
+    }
 }
 @media (max-width: 692px){
     .about li{
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
-    .in span{
-        margin-right: 7rem;
-    }
     .in ion-icon{
-        margin-left: 19rem;
+        margin-left: 37rem;
     }
 }
 @media (max-width: 662px){
-    .in span{
-        margin-right: 7rem;
-    }
     .in ion-icon{
-        margin-left: 18rem;
+        margin-left: 35rem;
     }
 }
 
@@ -1827,15 +1850,23 @@ footer img {
         nav ul {
             max-width: 40%;
         }
-           
-            .in ion-icon{
-                margin-left: 17rem;
-            }
+        .in ion-icon{
+            margin-left: 34rem;
+        }
+}
+@media (max-width: 620px){
+    .in ion-icon{
+        margin-left: 32rem;
+    }
 }
 
+
 @media (max-width: 595px){
+    .sidebar-container .Bar{
+        width: 100%;
+    }
     .in ion-icon{
-        margin-left: 15rem;
+        margin-left: 31rem;
     }
     .contactArea{
         flex-direction: column;
@@ -1856,7 +1887,11 @@ footer img {
         margin-left: 2rem;
     }
 }
-@media (max-width: 550px){
+@media (max-width: 570px){
+    .in ion-icon{
+        margin-left: 30rem;
+    }
+
     .article img{
         max-width: 50%;
         height: 500px;
@@ -1869,32 +1904,23 @@ footer img {
         width: 200px;
         height: 200px;
     }
-    .in span{
-        margin-right: 6rem;
-    }
-    .in ion-icon{
-        margin-left: 14rem;
+    .Heading button{
+        width: 30%;
     }
 }
-@media (max-width: 500px){
-    .in{
-        width: 90%;       
-    }
+@media (max-width: 550px){
     .in ion-icon{
-        margin-left: 24rem;
+        margin-left: 28rem;
     }
-    .in span{
-        margin-right: 15rem;
-    }
-    .btn-{
-        width: 90%;
-    
+}
+
+@media (max-width: 500px){
+
+    .in ion-icon{
+        margin-left: 26rem;
     }
     .option {
         width: 90%;
-    }
-    .sidebar-container .Bar{
-        width: 100%;
     }
     .subnav ul{
         margin-right: 12rem;
@@ -1924,20 +1950,25 @@ footer img {
         width: 100%;
         font-size: 13px;
     }
+   
     .more-info{
         max-width: 100%;
         bottom: 4rem;
     }
 }
-@media (max-width: 450px){
-    .in span{
-        margin-left: 19rem;
-        width: 100%;
+@media (max-width: 475px){
+    .in ion-icon{
+        margin-left: 25rem;
     }
+    nav ul li:hover .SignWeeding{
+        width: 10%;
+    }
+
+}
+@media (max-width: 475px){
     .in ion-icon{
         margin-left: 23rem;
-    }
-}
+    }}
 
 @media (max-width: 431px){
     .in ion-icon{
@@ -1952,8 +1983,13 @@ footer img {
     .Heading h1{
         font-size: 15px;
     }
-    .Heading button{
-        width: 30%;
+    .article img{
+        max-width: 50%;
+        height: 500px;
+    }
+    .info {
+        height: 500px;
+        padding: 0px;
     }
     .TwoIn1{
         display: flex;
@@ -1982,27 +2018,12 @@ footer img {
     .subnav h1{
         font-size: small;
     }
-    nav ul li:hover .SignWeeding{
-        width: 10%;
-    }
+   
     nav ul li:hover .subnav {
         width: 300px;
     }
 }
 @media (max-width: 400px){
-    .in ion-icon{
-        margin-left: 20rem;
-    }
-}
-@media (max-width: 413px){
-
-.social li {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-}
-}
-
-@media (max-width: 391px){
     .logo img {
         max-width: 10rem;
     }
@@ -2021,6 +2042,20 @@ footer img {
         width: 70%; 
         height: 29%; 
     }
+    .in ion-icon{
+        margin-left: 20rem;
+    }
+}
+@media (max-width: 413px){
+
+.social li {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+}
+
+@media (max-width: 391px){
+  
     .article img{
         max-width: 50%;
         height: 500px;
@@ -2030,7 +2065,15 @@ footer img {
         padding: 0px;
     }
     .info p{
-        padding: 2px;
+        font-size: 10px;
+        padding: 15px;
+    }
+    .info button{
+        padding: 2px 10px;
+        font-size: small;
+    }
+    .Heading button{
+        font-size: small;
     }
     .Heading p{
         width: 90%;
@@ -2040,9 +2083,24 @@ footer img {
     }
    
 }
+@media (max-width: 379px){
+    nav ul li{
+        padding: 5px;
+    }
+}
+
 @media (max-width: 370px){
     .in ion-icon{
         margin-left: 19rem;
+    }
+    nav ul {
+        height: 90vh;
+    }
+    .subnav ul{
+        margin-top: 1rem;
+    }
+    nav ul li:hover .subnav ul li{
+        padding: 2px;
     }
 }
 @media (max-width: 360px){
@@ -2053,26 +2111,28 @@ footer img {
         font-size: 23px;
     }
     .more-info p{
+        font-size: 10px;
         opacity: 1;
     }
     .more-info button{
+        font-size: small;
         margin-bottom: 1.5rem;
         width: 30%;
     }
+   
 }
 
 
 
 /*bracelets break points */
 
-@media (max-width: 992px){
-
-.wishlist-item,
+@media (max-width: 1400px){
+    .wishlist-item,
     .cart-item{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        height: 220px;
+        height: 230px;
     }
     .wishlist-item #pic2,
     .cart-item #pic2{
@@ -2107,9 +2167,39 @@ footer img {
         margin-right: 3rem;
     }
     #pic2{
-            width: 230px;
-            height: 230px;
-        }
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width: 1280px){
+    #pic2{
+        width: 280px;
+        height: 280px;
+    }
+}
+@media (max-width: 1150px){
+    #pic2{
+        width: 260px;
+        height: 260px;
+    }
+}
+@media (max-width: 1050px){
+    #pic2{
+        width: 230px;
+        height: 230px;
+    }
+    .descPrice{
+        font-size: 14px;
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 992px){
+    .heart-icon{
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+    }
 }
 
 @media (max-width: 950px){
@@ -2117,13 +2207,8 @@ footer img {
         width: 220px;
         height: 220px;
     }
-    .heart-icon{
-        margin-top: 0.3rem;
-        margin-right: 0.3rem;
-        
-    }
-    .item1 p{
-        font-size: 15px;
+    .descPrice{
+        font-size: 13px;
     }
     
     .item1 button{
@@ -2141,6 +2226,16 @@ footer img {
         width: 180px;
         height: 180px;
     }
+    .descPrice{
+        font-size: 12px;
+    }
+    .msg-alert{
+        width: 40%;
+        z-index: 1;
+    }
+    .check-icon{
+        font-size: 100px;
+    }
 }
 
 @media (max-width: 768px){
@@ -2148,7 +2243,6 @@ footer img {
         font-size: 20px;
         margin-top: 0.3rem;
         margin-right: 0.3rem;
-        
     }
     .item1 p{
         font-size: 13px;
@@ -2175,8 +2269,21 @@ footer img {
         width: 130px;
         height: 130px;
     }
+    .msg-alert{
+        width: 50%;
+        height: 150px;
+        z-index: 1;
+    }
 }
 @media (max-width: 576px){
+    .cart-item button{
+        margin-right: 3rem;
+    }
+    .wishlist-item #pic2,
+    .cart-item #pic2{
+        height: 150px;
+        width: 150px;
+    }
     .info-area{
         padding: 5px;
     }
@@ -2184,21 +2291,33 @@ footer img {
         width: 250px;
         height: 250px;
     }
+    .cart-item{
+        height: 250px;
+    }
+    .cart-item button{
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+    .cart-div #removeButton{
+        margin-left: 1rem;
+        margin-right: 2rem;
+    }
+    .descPrice{
+        margin-right: 1rem;
+    }
     .Div1,
     .Div2,
     .Div3{
         flex-direction: column;
-    }
-    .descPrice{
-        margin-right: 2rem;
     }
     .item1{
         backdrop-filter: blur(7px) ;
         background-color: rgba(255, 255, 255, 0.20);
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
         margin-bottom: 1rem;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
+        margin-bottom: 3rem;
     }
 }
 @media (max-width: 520px){
@@ -2221,7 +2340,17 @@ footer img {
         height: 220px;
     }
     .descPrice{
-        margin-right: 1rem;
+        font-size: 14px;
+        width: 70%;
+        margin-right: 0;
+    }
+    .cart-item button{
+        margin-top: 1rem;
+        margin-left: 3rem;
+    }
+    .cart-div #removeButton{
+        margin-left: 0rem;
+        margin-right: 0rem;
     }
 }
 @media (max-width: 400px){
@@ -2235,14 +2364,16 @@ footer img {
         width: 200px;
         height: 200px;
     }
-    .descPrice{
-        margin-right: 1rem;
-    }
 }
 @media (max-width: 360px){
     #pic2{
         width: 180px;
         height: 180px;
+    }
+    .descPrice{
+        font-size: 14px;
+        width: 50%;
+        margin-right: 0;
     }
 }
 

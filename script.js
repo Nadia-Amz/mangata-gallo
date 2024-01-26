@@ -320,9 +320,9 @@ function checkoutBtn() {
     signinBtn.onclick = function(e){
         e.preventDefault();
         field.style.maxHeight = "0";
-        field.style.visibility = "hidden";
+        field.style.display = "none";
         passwordField.style.maxHeight = "0";
-        passwordField.style.visibility = "hidden";
+        passwordField.style.display = "none";
         title.innerHTML = "Sign In";
         signupBtn.classList.add("disable");
         signinBtn.classList.remove("disable");
@@ -331,9 +331,9 @@ function checkoutBtn() {
     signupBtn.onclick = function(e){
         e.preventDefault();
         field.style.maxHeight = "60px";
-        field.style.visibility = "visible";
+        field.style.display = "flex";
         passwordField.style.maxHeight = "60px";
-        passwordField.style.visibility = "visible";
+        passwordField.style.display = "flex";
         title.innerHTML = "Sign Up";
         signupBtn.classList.remove("disable");
         signinBtn.classList.add("disable");

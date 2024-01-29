@@ -102,10 +102,6 @@ h1{
     max-width: 100%;
 }
 .logo img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     height: auto;
     max-width: 15rem;
 }
@@ -126,6 +122,7 @@ nav {
     position: fixed;
     box-shadow: 0px 0px 10px rgb(0 0 0/10%);
     top: 0;
+    z-index: 2;
 }
 
 
@@ -173,9 +170,6 @@ li a:hover {
     align-items: center;
     width: 50%;
     height: auto;
-    /* flex: 1 0 20%; */
-    /* margin-left: 3rem;
-    margin-right: 3rem; */
 }
 .subnav ul li a{
    display: flex;
@@ -186,16 +180,15 @@ li a:hover {
    padding: 5px 15px;
 }
 
-
-nav ul li:hover .subnav  {
+nav ul li:hover .subnav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     backdrop-filter: blur(7px) ;
     background-color: rgba(255, 255, 255, 0.20);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    top: 65%;
     height: 400px;
+    top: 65%;
     opacity: 1;
     visibility: visible;
 }
@@ -224,6 +217,7 @@ nav ul li:hover .subnav ul li{
 .productsPic {
     display: flex;
     justify-content: space-between;
+    object-fit: cover;
 }
 
 .productsPic img {
@@ -553,6 +547,8 @@ input {
 
 
 .btn- #signupBtn{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     padding: 5px 25px;
     opacity: 0.7;
 }
@@ -560,6 +556,8 @@ input {
     opacity: 1;
 }
 .btn- #signinBtn{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 5px 25px;
     opacity: 0.7;
 }
@@ -582,9 +580,7 @@ input {
     border: 0;
     outline: 0;
     cursor: pointer;
-    /* padding: 5px 25px; */
-    border-radius: 10px;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     transition: background-color 1s;
 }
 
@@ -1185,7 +1181,7 @@ footer img {
 .Bracelet-pic{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     max-width: 100%;
     height: auto;
@@ -1195,7 +1191,7 @@ footer img {
 .Div3{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;  
     width: 100%;
     height: auto;
@@ -2287,7 +2283,12 @@ footer img {
     .info-area{
         padding: 5px;
     }
+    .heart-icon{
+        font-size: 25px;
+        margin-top: 1.3rem;
+    }
     #pic2{
+        margin-top: 1rem;
         width: 250px;
         height: 250px;
     }
@@ -2295,7 +2296,8 @@ footer img {
         height: 250px;
     }
     .cart-item button{
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+        width: 15%;
         margin-left: 2rem;
     }
     .cart-div #removeButton{
@@ -2313,7 +2315,7 @@ footer img {
     .item1{
         backdrop-filter: blur(7px) ;
         background-color: rgba(255, 255, 255, 0.20);
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1); 
         margin-bottom: 1rem;
         flex-direction: column;
         width: 100%;
@@ -2345,7 +2347,7 @@ footer img {
         margin-right: 0;
     }
     .cart-item button{
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         margin-left: 3rem;
     }
     .cart-div #removeButton{

@@ -31,8 +31,27 @@ humburgerIcon.addEventListener('click',() =>{
 Close.addEventListener('click', () =>{
     content.style.visibility = 'hidden';
     Close.style.visibility = 'hidden';
-
 });
+
+/*Add to cart button*/
+
+const AddToCartBtn = document.querySelectorAll('.add-to-card');
+
+    AddToCartBtn.forEach(Btn => {
+        let isClicked = false;
+
+        Btn.addEventListener('click', () => {
+    
+            if (isClicked) {
+                Btn.style.background = '#fff'; 
+                
+            } else {
+                Btn.style.background = '#d9b99b';
+            }
+
+        });
+    });
+
 
 
 /*heart icon*/
@@ -192,7 +211,7 @@ function deleteItem(itemId) {
     
 }
 function removeFromCart(itemId){
-    item = document.getElementById("cart"+ itemId);
+    const item = document.getElementById("cart"+ itemId);
     const index = cartlist.indexOf(itemId);
     if(item){
         item.remove();
@@ -267,7 +286,9 @@ function addItem(e){
 function removeItem(productId){
     const product = document.getElementById("cart" +productId);
     const index = cartlist.indexOf(productId);
-    if (index !== -1 && product) {
+    const AddToCartBtn = document.querySelector(`.add-to-card[data-item-id="${productId}"]`);
+    if (index !== -1 && product && AddToCartBtn) {
+        AddToCartBtn.style.background = '#fff'; 
         product.remove();
         cartlist.splice(index, 1);
         updateCartCount();
@@ -287,16 +308,17 @@ function checkoutBtn() {
             const cartlistCopy = [...cartlist];
 
             for (const productId of cartlistCopy ) {
-                removeItem(productId);
-                console.log('cartlist', cartlist.length);
-            }
+                    removeItem(productId);
+                    console.log('cartlist', cartlist.length);
+                }
+
             for(const itemId of cartlistCopy){
                     removeFromCart(itemId);
-                    itemId.remove();
+                    // itemId.remove();
                     console.log('itemId removed', itemId);
             }
+
         }, 1000);
-       
     }else{
         console.log('cart is empty');
     }

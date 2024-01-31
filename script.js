@@ -2,8 +2,8 @@
 
 const nav = document.querySelector("nav");
 
-window.addEventListener("scroll", function(){
-    nav.classList.toggle ("sticky", this.window.scrollY > 0);
+window.addEventListener("scroll", function () {
+    nav.classList.toggle("sticky", this.window.scrollY > 0);
 })
 
 /*Humburger menu*/
@@ -12,23 +12,23 @@ const humburgerIcon = document.querySelector('.humburgerIcon');
 const content = document.querySelector('.content');
 const Close = document.querySelector('.close');
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
 
-    if(window.innerWidth > 992){
+    if (window.innerWidth > 992) {
         content.style.visibility = 'visible';
         Close.style.visibility = 'hidden';
     }
-    else{
+    else {
         content.style.visibility = 'hidden';
     }
 });
 
-humburgerIcon.addEventListener('click',() =>{
+humburgerIcon.addEventListener('click', () => {
     content.style.visibility = 'visible';
     Close.style.visibility = 'visible';
 });
 
-Close.addEventListener('click', () =>{
+Close.addEventListener('click', () => {
     content.style.visibility = 'hidden';
     Close.style.visibility = 'hidden';
 });
@@ -41,41 +41,39 @@ const AddToCartBtn = document.querySelectorAll('.add-to-card');
         let isClicked = false;
 
         Btn.addEventListener('click', () => {
-    
+
             if (isClicked) {
-                Btn.style.background = '#fff'; 
-                
+                Btn.style.background = '#fff';
             } else {
                 Btn.style.background = '#d9b99b';
             }
 
         });
-    });
-
+});
 
 
 /*heart icon*/
 
-    const icons = document.querySelectorAll('.heart-icon');
+const icons = document.querySelectorAll('.heart-icon');
 
-    icons.forEach(icon => {
-        let isClicked = false;
-    
-        icon.addEventListener('click', () => {
-      
-            if (isClicked) {
-                icon.style.color = ''; 
-                icon.style.opacity = '0.5'; 
-                
-            } else {
-                icon.style.color = 'red';
-                icon.style.opacity = '1';
-            }
-    
-            isClicked = !isClicked;
-        });
+icons.forEach(icon => {
+    let isClicked = false;
+
+    icon.addEventListener('click', () => {
+
+        if (isClicked) {
+            icon.style.color = '';
+            icon.style.opacity = '0.5';
+
+        } else {
+            icon.style.color = 'red';
+            icon.style.opacity = '1';
+        }
+
+        isClicked = !isClicked;
     });
-    
+});
+
 
 /* wishliste*/
 
@@ -88,7 +86,7 @@ function addToWishlist(itemId) {
         updateWishlist();
         updatePoint();
         console.log(`Item ${itemId} added to wishlist`);
-    } else{
+    } else {
         deleteItem(itemId);
         updatePoint();
     }
@@ -103,7 +101,7 @@ function updateWishlist() {
         wishlist.forEach(itemId => {
             const itemDiv = document.getElementById(itemId).cloneNode(true);
             const icons = document.querySelector(`.heart-icon[data-item-id="${itemId}"]`);
-            
+
             itemDiv.classList.add('wishlist-item');
             const buttonContainer = document.createElement('div');
             buttonContainer.classList.add('buttonContainer');
@@ -111,20 +109,20 @@ function updateWishlist() {
             const addItemBtn = document.createElement('button');
             addItemBtn.textContent = 'Add to cart';
             addItemBtn.id = "addItemBtn";
-            addItemBtn.onclick = function(){
+            addItemBtn.onclick = function () {
                 addToCart(itemId);
-                icons.style.color='';
-                icons.style.opacity='0.5';
+                icons.style.color = '';
+                icons.style.opacity = '0.5';
 
             };
 
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'Remove';
             removeBtn.id = "removeBtn";
-            removeBtn.onclick = function() {
+            removeBtn.onclick = function () {
                 deleteItem(itemId);
-                icons.style.color='';
-                icons.style.opacity='0.5';
+                icons.style.color = '';
+                icons.style.opacity = '0.5';
             };
 
             buttonContainer.appendChild(removeBtn);
@@ -133,27 +131,27 @@ function updateWishlist() {
             wishlistItemsContainer.appendChild(itemDiv);
         });
     }
-        updateEmptyWishlistMessage();
-        updatePoint();
-    
+    updateEmptyWishlistMessage();
+    updatePoint();
+
 }
 
 function updateEmptyWishlistMessage() {
     const emptyWishlistMessage = document.getElementById("wishlist-msg");
- if (wishlist.length > 0) {
-     emptyWishlistMessage.style.display = "none";
- } else {
-    emptyWishlistMessage.style.display = "block";
- }
+    if (wishlist.length > 0) {
+        emptyWishlistMessage.style.display = "none";
+    } else {
+        emptyWishlistMessage.style.display = "block";
+    }
 }
 
 function updatePoint() {
-    const point= document.querySelector('.point');
- if (wishlist.length > 0) {
-    point.style.visibility = "visible";
-} else {
-    point.style.visibility = "hidden";
-}
+    const point = document.querySelector('.point');
+    if (wishlist.length > 0) {
+        point.style.visibility = "visible";
+    } else {
+        point.style.visibility = "hidden";
+    }
 }
 
 
@@ -162,17 +160,17 @@ function addToCart(itemId) {
 
     // Check if the wishlist item exists
     if (wishlistItem) {
-        const cartItemsContainer = document.getElementById('cartlistItems'); 
+        const cartItemsContainer = document.getElementById('cartlistItems');
 
         // Clone the wishlist item or create a new cart item
         const cartItem = wishlistItem.cloneNode(true);
         cartItem.id = 'cart' + itemId;
         const removeButton = document.createElement('button');
-              removeButton.textContent = 'Remove';
-              removeButton.id = "removeButton";
-              removeButton.onclick = function() {
-                removeFromCart(itemId); 
-            };
+        removeButton.textContent = 'Remove';
+        removeButton.id = "removeButton";
+        removeButton.onclick = function () {
+            removeFromCart(itemId);
+        };
 
         // Add or update any specific classes or attributes for cart items
         cartItem.classList.add('cart-div');
@@ -183,7 +181,7 @@ function addToCart(itemId) {
 
         cartlist.push(cartItem);
 
-        console.log('CART : ' ,cartlist.length);
+        console.log('CART : ', cartlist.length);
 
         // Remove the item from the wishlist
         wishlistItem.remove();
@@ -195,7 +193,7 @@ function addToCart(itemId) {
         updateEmptyWishlistMessage();
         updatePoint();
         updateEmptyCartMessage();
-        updateCartCount(); 
+        updateCartCount();
 
     }
 }
@@ -208,33 +206,34 @@ function deleteItem(itemId) {
         updateWishlist();
         console.log(`Item ${itemId} removed from wishlist`);
     }
-    
+
 }
-function removeFromCart(itemId){
-    const item = document.getElementById("cart"+ itemId);
+function removeFromCart(itemId) {
+    const item = document.getElementById("cart" + itemId);
     const index = cartlist.indexOf(itemId);
     if(item){
         item.remove();
     }
         cartlist.splice(index, 1);
-        console.log("cartlist", cartlist.length);
         updateCartCount();
         updateEmptyCartMessage();
         console.log(`Item ${itemId} removed from cartlist`);
+        // console.log("cartlist", cartlist.length);
+
 }
 
 
 /*cart list*/
- 
+
 let cartlist = [];
 
 
-function setup(){
+function setup() {
     console.log("window loaded");
     const products = document.querySelectorAll(".add-to-card");
 
-    for(let i=0; i<products.length; i++){
-        products[i].onclick = function(e){
+    for (let i = 0; i < products.length; i++) {
+        products[i].onclick = function (e) {
             addItem(e);
             updateEmptyCartMessage();
         }
@@ -257,10 +256,11 @@ function updateCartCount() {
     countElement.textContent = cartlist.length.toString();
 }
 
-function addItem(e){
+function addItem(e) {
     const productId = e.target.getAttribute("id");
     console.log("Product :", productId);
     const productDiv = document.getElementById(productId);
+    const AddToCartBtn = document.querySelector(`.add-to-card[id="${productId}"]`);
 
     const cartDiv = document.createElement("div");
     cartDiv.setAttribute("id", "cart" + productId);
@@ -272,226 +272,228 @@ function addItem(e){
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.id = "removeBtnCart";
-    removeBtn.onclick = function() { removeItem(productId)};
-    cartDiv.appendChild(removeBtn);
+    removeBtn.onclick = function () {
+        removeItem(productId);
+        AddToCartBtn.style.background='#fff'; };
+        cartDiv.appendChild(removeBtn);
 
     let cartSubnav = document.getElementById("cart-List");
     cartSubnav.appendChild(cartDiv);
 
     cartlist.push(productId);
     updateCartCount();
-    
+
 }
 
-function removeItem(productId){
-    const product = document.getElementById("cart" +productId);
+function removeItem(productId) {
+    const product = document.getElementById("cart" + productId);
     const index = cartlist.indexOf(productId);
-    const AddToCartBtn = document.querySelector(`.add-to-card[data-item-id="${productId}"]`);
-    if (index !== -1 && product && AddToCartBtn) {
-        AddToCartBtn.style.background = '#fff'; 
-        product.remove();
+    if (index !== -1 && product) {
         cartlist.splice(index, 1);
-        updateCartCount();
+        product.remove();
         console.log(`Item ${productId} removed from cartlist`);
+        updateCartCount();
         updateEmptyCartMessage();
     }
+
 }
 
 function checkoutBtn() {
-
     if (cartlist.length > 0) {
-
         const alertElement = document.getElementById('alert-checkout');
         alertElement.style.visibility = 'visible';
         setTimeout(() => {
             alertElement.style.visibility = 'hidden';
             const cartlistCopy = [...cartlist];
 
-            for (const productId of cartlistCopy ) {
-                    removeItem(productId);
-                    console.log('cartlist', cartlist.length);
+            for (const productId of cartlistCopy) {
+                removeItem(productId);
+                const AddToCartBtn = document.querySelector(`.add-to-card[id="${productId}"]`);
+                if(AddToCartBtn){
+                    AddToCartBtn.style.background='#fff';
+                    console.log('the color of the', productId ,'has changed');
                 }
-
-            for(const itemId of cartlistCopy){
-                    removeFromCart(itemId);
-                    // itemId.remove();
-                    console.log('itemId removed', itemId);
+                
             }
-
+            for (const itemId of cartlistCopy) {
+                removeFromCart(itemId);
+                // itemId.remove();
+            }
         }, 1000);
-    }else{
+    } else {
         console.log('cart is empty');
     }
     console.log('cartlist', cartlist.length);
-
 }
 
-    window.addEventListener("load", setup);
+
+
+window.addEventListener("load", setup);
 
 
 
 /*Form validation*/
 
-    let signinBtn = document.getElementById("signinBtn");
-    let signupBtn = document.getElementById("signupBtn");
-    let RegisterBtn = document.getElementById("RegisterBtn");
-    let field = document.getElementById("field");
-    let passwordField = document.getElementById("passwordField");
-    let title = document.getElementById("title");
+let signinBtn = document.getElementById("signinBtn");
+let signupBtn = document.getElementById("signupBtn");
+let RegisterBtn = document.getElementById("RegisterBtn");
+let field = document.getElementById("field");
+let passwordField = document.getElementById("passwordField");
+let title = document.getElementById("title");
 
-    signinBtn.onclick = function(e){
-        e.preventDefault();
-        field.style.maxHeight = "0";
-        field.style.display = "none";
-        passwordField.style.maxHeight = "0";
-        passwordField.style.display = "none";
-        title.innerHTML = "Sign In";
-        signupBtn.classList.add("disable");
-        signinBtn.classList.remove("disable");
+signinBtn.onclick = function (e) {
+    e.preventDefault();
+    field.style.maxHeight = "0";
+    field.style.display = "none";
+    passwordField.style.maxHeight = "0";
+    passwordField.style.display = "none";
+    title.innerHTML = "Sign In";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+}
+
+signupBtn.onclick = function (e) {
+    e.preventDefault();
+    field.style.maxHeight = "60px";
+    field.style.display = "flex";
+    passwordField.style.maxHeight = "60px";
+    passwordField.style.display = "flex";
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+}
+
+
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("password2");
+
+
+
+const rememberMe = document.getElementById("RememberCheck");
+rememberMe.addEventListener('change', lsRememberMe);
+
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+    rememberMe.setAttribute("checked", "checked");
+    email.value = localStorage.email;
+    password.value = localStorage.password;
+} else {
+    rememberMe.removeAttribute("checked");
+    email.value = "";
+    password.value = "";
+}
+
+function lsRememberMe() {
+
+    if (rememberMe.checked && email.value !== "" && password.value !== "") {
+        localStorage.email = email.value;
+        localStorage.password = password.value;
+        localStorage.checkbox = rememberMe.value;
+    } else {
+        localStorage.email = "";
+        localStorage.password = "";
+        localStorage.checkbox = "";
     }
-
-    signupBtn.onclick = function(e){
-        e.preventDefault();
-        field.style.maxHeight = "60px";
-        field.style.display = "flex";
-        passwordField.style.maxHeight = "60px";
-        passwordField.style.display = "flex";
-        title.innerHTML = "Sign Up";
-        signupBtn.classList.remove("disable");
-        signinBtn.classList.add("disable");
-    }
+}
 
 
-    const username = document.getElementById("username");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("password2");
+username.addEventListener('input', checkUsername);
+email.addEventListener('input', checkEmail);
+password.addEventListener('input', checkPassword);
+confirmPassword.addEventListener('input', checkConfirmPassword);
 
+function checkUsername() {
+    const usernameValue = username.value.trim();
+    const isUsernameVisible = parseInt(getComputedStyle(field).maxHeight) > 0;
 
-    
-    const rememberMe = document.getElementById("RememberCheck");
-    rememberMe.addEventListener('change', lsRememberMe);
-
-    
-    if(localStorage.checkbox && localStorage.checkbox !==""){
-        rememberMe.setAttribute("checked", "checked");
-        email.value = localStorage.email;
-        password.value = localStorage.password;
-    }else{
-        rememberMe.removeAttribute("checked");
-        email.value = "";
-        password.value = "";
-    }
-
-    function lsRememberMe() {
-        
-        if (rememberMe.checked && email.value !== "" && password.value !=="") {
-          localStorage.email = email.value;
-          localStorage.password = password.value;
-          localStorage.checkbox = rememberMe.value;
+    if (isUsernameVisible) {
+        if (usernameValue === '') {
+            setErrorFor(username, 'Username cannot be blank');
         } else {
-          localStorage.email = "";
-          localStorage.password = "";
-          localStorage.checkbox = "";
-        }
-      }
-
-
-    username.addEventListener('input', checkUsername);
-    email.addEventListener('input', checkEmail);
-    password.addEventListener('input', checkPassword);
-    confirmPassword.addEventListener('input', checkConfirmPassword);
-
-    function checkUsername() {
-        const usernameValue = username.value.trim();
-        const isUsernameVisible = parseInt(getComputedStyle(field).maxHeight) > 0;
-
-        if (isUsernameVisible) {
-            if (usernameValue === '') {
-                setErrorFor(username, 'Username cannot be blank');
-            } else {
-                setSuccessFor(username);
-            }
+            setSuccessFor(username);
         }
     }
+}
 
-    function checkEmail() {
-        const emailValue = email.value.trim();
+function checkEmail() {
+    const emailValue = email.value.trim();
 
-        if (emailValue === '') {
-            setErrorFor(email, 'Email cannot be blank');
-        } else if (!isEmail(emailValue)) {
-            setErrorFor(email, 'Email is not valid');
+    if (emailValue === '') {
+        setErrorFor(email, 'Email cannot be blank');
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Email is not valid');
+    } else {
+        setSuccessFor(email);
+    }
+}
+
+function checkPassword() {
+    const passwordValue = password.value.trim();
+
+    if (passwordValue === '') {
+        setErrorFor(password, 'Password cannot be blank');
+    } else if (!isPassword(passwordValue)) {
+        setErrorFor(password, 'Password is not valid');
+    } else {
+        setSuccessFor(password);
+    }
+}
+
+function checkConfirmPassword() {
+    const confirmPasswordValue = confirmPassword.value.trim();
+    const passwordValue = password.value.trim();
+    const isConfirmPasswordVisible = parseInt(getComputedStyle(passwordField).maxHeight) > 0;
+
+    if (isConfirmPasswordVisible) {
+        if (confirmPasswordValue === '') {
+            setErrorFor(confirmPassword, 'Confirm password cannot be blank');
+        } else if (passwordValue !== confirmPasswordValue) {
+            setErrorFor(confirmPassword, 'Passwords do not match');
         } else {
-            setSuccessFor(email);
+            setSuccessFor(confirmPassword);
         }
     }
+}
 
-    function checkPassword() {
-        const passwordValue = password.value.trim();
+function checkInputs() {
+    checkUsername();
+    checkEmail();
+    checkPassword();
+    checkConfirmPassword();
 
-        if (passwordValue === '') {
-            setErrorFor(password, 'Password cannot be blank');
-        } else if (!isPassword(passwordValue)) {
-            setErrorFor(password, 'Password is not valid');
-        } else {
-            setSuccessFor(password);
-        }
+    const isValid = true;
+
+    if (isValid) {
+        const alertElement = document.getElementById('alert');
+        alertElement.style.visibility = 'visible';
+
+        setTimeout(() => {
+            alertElement.style.visibility = 'hidden';
+        }, 5000);
     }
-
-    function checkConfirmPassword() {
-        const confirmPasswordValue = confirmPassword.value.trim();
-        const passwordValue = password.value.trim();
-        const isConfirmPasswordVisible = parseInt(getComputedStyle(passwordField).maxHeight) > 0;
-
-        if (isConfirmPasswordVisible) {
-            if (confirmPasswordValue === '') {
-                setErrorFor(confirmPassword, 'Confirm password cannot be blank');
-            } else if (passwordValue !== confirmPasswordValue) {
-                setErrorFor(confirmPassword, 'Passwords do not match');
-            } else {
-                setSuccessFor(confirmPassword);
-            }
-        }
-    }
-
-    function checkInputs() {
-        checkUsername();
-        checkEmail();
-        checkPassword();
-        checkConfirmPassword();
-
-        const isValid = true;
-
-        if (isValid) {
-            const alertElement = document.getElementById('alert');
-            alertElement.style.visibility = 'visible';
-
-            setTimeout(() => {
-                alertElement.style.visibility = 'hidden';
-            }, 5000);
-        }
-    }
+}
 
 
 
-        function setErrorFor(input, message){
-            const formControl = input.parentElement;
-            const span = formControl.querySelector('span');
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const span = formControl.querySelector('span');
 
-            span.innerText = message;
-            formControl.className = 'in error';
-        }
+    span.innerText = message;
+    formControl.className = 'in error';
+}
 
-        function setSuccessFor(input){
-            const formControl = input.parentElement;
-            formControl.className = 'in success';
-        }
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'in success';
+}
 
-        function isEmail(email){
-            return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
-        }
+function isEmail(email) {
+    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+}
 
-        function isPassword(password){
-            return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
-        }
+function isPassword(password) {
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
+}

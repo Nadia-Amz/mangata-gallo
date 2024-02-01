@@ -1295,8 +1295,7 @@ footer img {
     height: auto;
     align-items: center;
 }
-.wishlist-item #addItemBtn,
-#removeBtn{
+.wishlist-item #addItemBtn{
     /* background-color: #0d8348; */
     align-items: center;
     padding: 2px 10px;
@@ -1315,8 +1314,7 @@ footer img {
     margin-top: 11rem;
     margin-left: -8rem;
 }
-.cart-div #addItemBtn, 
-#removeBtn{
+.cart-div #addItemBtn{
     display: none;
 }
 .cart-div #removeButton{

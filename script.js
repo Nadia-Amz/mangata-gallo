@@ -310,9 +310,9 @@ function checkoutBtn() {
 
 window.addEventListener("load", cart);
 
+/*Login Form*/
 
-
-/*Form validation*/
+/*SignIn and SignUp buttons*/
 
 let signinBtn = document.getElementById("signinBtn");
 let signupBtn = document.getElementById("signupBtn");
@@ -343,6 +343,7 @@ signupBtn.onclick = function (e) {
     signinBtn.classList.add("disable");
 }
 
+/*Remember me checkbox*/
 
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -352,7 +353,7 @@ const confirmPassword = document.getElementById("password2");
 
 
 const rememberMe = document.getElementById("RememberCheck");
-rememberMe.addEventListener('change', lsRememberMe);
+rememberMe.addEventListener('change', RememberMe);
 
 
 if (localStorage.checkbox && localStorage.checkbox !== "") {
@@ -365,7 +366,7 @@ if (localStorage.checkbox && localStorage.checkbox !== "") {
     password.value = "";
 }
 
-function lsRememberMe() {
+function RememberMe() {
 
     if (rememberMe.checked && email.value !== "" && password.value !== "") {
         localStorage.email = email.value;
@@ -378,6 +379,7 @@ function lsRememberMe() {
     }
 }
 
+/*Form validation*/
 
 username.addEventListener('input', checkUsername);
 email.addEventListener('input', checkEmail);
@@ -390,9 +392,9 @@ function checkUsername() {
 
     if (isUsernameVisible) {
         if (usernameValue === '') {
-            setErrorFor(username, 'Username cannot be blank');
+            ErrorMsg(username, 'Username cannot be blank');
         } else {
-            setSuccessFor(username);
+            Success(username);
         }
     }
 }
@@ -401,11 +403,11 @@ function checkEmail() {
     const emailValue = email.value.trim();
 
     if (emailValue === '') {
-        setErrorFor(email, 'Email cannot be blank');
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(email, 'Email is not valid');
+        ErrorMsg(email, 'Email cannot be blank');
+    } else if (!EmailRegex(emailValue)) {
+        ErrorMsg(email, 'Email is not valid');
     } else {
-        setSuccessFor(email);
+        Success(email);
     }
 }
 
@@ -414,10 +416,10 @@ function checkPassword() {
 
     if (passwordValue === '') {
         setErrorFor(password, 'Password cannot be blank');
-    } else if (!isPassword(passwordValue)) {
-        setErrorFor(password, 'Password is not valid');
+    } else if (!PasswordRegex(passwordValue)) {
+        ErrorMsg(password, 'Password is not valid');
     } else {
-        setSuccessFor(password);
+        Success(password);
     }
 }
 
@@ -428,11 +430,11 @@ function checkConfirmPassword() {
 
     if (isConfirmPasswordVisible) {
         if (confirmPasswordValue === '') {
-            setErrorFor(confirmPassword, 'Confirm password cannot be blank');
+            ErrorMsg(confirmPassword, 'Confirm password cannot be blank');
         } else if (passwordValue !== confirmPasswordValue) {
-            setErrorFor(confirmPassword, 'Passwords do not match');
+            ErrorMsg(confirmPassword, 'Passwords do not match');
         } else {
-            setSuccessFor(confirmPassword);
+            Success(confirmPassword);
         }
     }
 }
@@ -457,23 +459,23 @@ function checkInputs() {
 
 
 
-function setErrorFor(input, message) {
+function ErrorMsg(input, message) {
     const formControl = input.parentElement;
     const span = formControl.querySelector('span');
 
     span.innerText = message;
-    formControl.className = 'in error';
+    formControl.className = 'inputArea error';
 }
 
-function setSuccessFor(input) {
+function Success(input) {
     const formControl = input.parentElement;
-    formControl.className = 'in success';
+    formControl.className = 'inputArea success';
 }
 
-function isEmail(email) {
+function EmailRegex(email) {
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 }
 
-function isPassword(password) {
+function PasswordRegex(password) {
     return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
 }

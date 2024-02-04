@@ -38,6 +38,7 @@
 body {
     font-family: 'Roboto Mono';
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -115,7 +116,8 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1; 
-    padding: 15px 5px ;
+    position: relative;
+    padding : 0px 5px;
 }
 
 
@@ -134,10 +136,14 @@ nav ul {
     justify-content: space-around;
     width: 100%;
     height: auto;
-    align-items: center;
+    align-items: stretch;
     list-style: none;
     text-align: center;
-    padding: 5px 15px ;
+    padding: 0px 0px ;
+}
+
+li {
+    padding: 25px 5px ;
 }
 
 li a {
@@ -188,7 +194,7 @@ nav ul li:hover .subnav {
     background-color: rgba(255, 255, 255, 0.20);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     height: 400px;
-    top: 65%;
+    top: 98%;
     opacity: 1;
     visibility: visible;
 }
@@ -1386,7 +1392,7 @@ footer img {
         max-width: 12rem;
     }
     nav ul {
-        padding: 5px 10px ;
+        padding: 0px 0px ;
     }
     
     nav li a {

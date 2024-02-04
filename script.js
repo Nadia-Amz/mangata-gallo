@@ -10,13 +10,13 @@ window.addEventListener("scroll", function () {
 
 const humburgerIcon = document.querySelector('.humburgerIcon');
 const content = document.querySelector('.content');
-const Close = document.querySelector('.close');
+const closeIcon = document.querySelector('.close');
 
 window.addEventListener('resize', function () {
 
     if (window.innerWidth > 992) {
         content.style.visibility = 'visible';
-        Close.style.visibility = 'hidden';
+        closeIcon.style.visibility = 'hidden';
     }
     else {
         content.style.visibility = 'hidden';
@@ -25,30 +25,29 @@ window.addEventListener('resize', function () {
 
 humburgerIcon.addEventListener('click', () => {
     content.style.visibility = 'visible';
-    Close.style.visibility = 'visible';
+    closeIcon.style.visibility = 'visible';
 });
 
-Close.addEventListener('click', () => {
+closeIcon.addEventListener('click', () => {
     content.style.visibility = 'hidden';
-    Close.style.visibility = 'hidden';
+    closeIcon.style.visibility = 'hidden';
 });
 
 
 /*Add to cart button*/
 
-const AddToCartBtns = document.querySelectorAll('.add-to-card');
+const addToCartBtns = document.querySelectorAll('.add-to-card');
 
-    AddToCartBtns.forEach(Btn => {
+    addToCartBtns.forEach(btn => {
         let isClicked = false;
 
-        Btn.addEventListener('click', () => {
-
+        btn.addEventListener('click', () => {
+            // TIP ternary operator: btn.style.background = (isClicked) ? '#fff' : '#d9b99b';
             if (isClicked) {
-                Btn.style.background = '#fff';
+                btn.style.background = '#fff';
             } else {
-                Btn.style.background = '#d9b99b';
+                btn.style.background = '#d9b99b';
             }
-
         });
 });
 
@@ -61,6 +60,8 @@ icons.forEach(icon => {
     let isClicked = false;
 
     icon.addEventListener('click', () => {
+        // icon.style.color = (isClicked) ? '' : 'red';
+        // icon.style.opacity = (isClicked) ? '0.5' : '1';
 
         if (isClicked) {
             icon.style.color = '';
@@ -122,17 +123,17 @@ function updateWishlist() {
             wishlistItems.appendChild(itemDiv);
         });
     }
-    WishlistMessage();
+    wishlistMessage();
     updatePoint();
 
 }
 
-function WishlistMessage() {
-    const WishlistMessage = document.getElementById("wishlist-msg");
+function wishlistMessage() {
+    const wishlistMessage = document.getElementById("wishlist-msg");
     if (wishlist.length > 0) {
-        WishlistMessage.style.display = "none";
+        wishlistMessage.style.display = "none";
     } else {
-        WishlistMessage.style.display = "block";
+        wishlistMessage.style.display = "block";
     }
 }
 
@@ -176,10 +177,10 @@ function addToCart(itemId) {
         console.log('wishlist: ', wishlist.length);
         console.log(`Item ${itemId} added to the cart and removed from the wishlist`);
 
-        WishlistMessage();
+        wishlistMessage();
         updatePoint();
-        CartMessage();
-        CartCount();
+        cartMessage();
+        cartCount();
 
     }
 }
@@ -200,8 +201,8 @@ function removeFromCart(itemId) {
     if(index !== -1 && item){
         cartlist.splice(index, 1);
         item.remove();
-        CartCount();
-        CartMessage();
+        cartCount();
+        cartMessage();
         console.log(`Item ${itemId} removed from cartlist`);
     }
 }
@@ -224,7 +225,7 @@ function cart() {
 
 }
 
-function CartMessage() {
+function cartMessage() {
     const emptyCartMessage = document.getElementById("cart-msg");
     if (cartlist.length > 0) {
         emptyCartMessage.style.display = "none";
@@ -234,7 +235,7 @@ function CartMessage() {
 }
 
 
-function CartCount() {
+function cartCount() {
     const countElement = document.getElementById('count');
     countElement.textContent = cartlist.length.toString();
 }
@@ -244,7 +245,7 @@ function addItem(e) {
     console.log("Product :", productId);
     const productDiv = document.getElementById(productId);
     let cartlistItems = document.getElementById("cartlistItems");
-    const AddToCartBtn = document.querySelector(`.add-to-card[id="${productId}"]`);
+    const addToCartBtn = document.querySelector(`.add-to-card[id="${productId}"]`);
 
     const cartDiv = document.createElement("div");
     cartDiv.setAttribute("id", "cart" + productId);
@@ -258,14 +259,14 @@ function addItem(e) {
     removeBtn.id = "removeBtnCart";
     removeBtn.onclick = function () {
         removeItem(productId);
-        AddToCartBtn.style.background='#fff'; 
+        addToCartBtn.style.background='#fff'; 
     };
 
     cartDiv.appendChild(removeBtn);
     cartlistItems.appendChild(cartDiv);
     cartlist.push(productId);
-    CartCount();
-    CartMessage();
+    cartCount();
+    cartMessage();
 
 }
 
@@ -276,8 +277,8 @@ function removeItem(productId) {
         cartlist.splice(index, 1);
         product.remove();
         console.log(`Item ${productId} removed from cartlist`);
-        CartCount();
-        CartMessage();
+        cartCount();
+        cartMessage();
     }
 
 }
@@ -293,9 +294,9 @@ function checkoutBtn() {
 
             for (const productId of cartlistCopy) {
                 removeItem(productId);
-                const AddToCartBtn = document.querySelector(`.add-to-card[id="${productId}"]`);
-                if(AddToCartBtn){
-                    AddToCartBtn.style.background='#fff';
+                const addToCartBtn = document.querySelector(`.add-to-card[id="${productId}"]`);
+                if(addToCartBtn){
+                    addToCartBtn.style.background='#fff';
                 }
             }
             for (const itemId of cartlistCopy) {
@@ -322,7 +323,10 @@ let passwordField = document.getElementById("passwordField");
 let title = document.getElementById("title");
 
 signinBtn.onclick = function (e) {
+    console.log('blah');
     e.preventDefault();
+    console.log('blah');
+
     field.style.maxHeight = "0";
     field.style.display = "none";
     passwordField.style.maxHeight = "0";
@@ -353,7 +357,7 @@ const confirmPassword = document.getElementById("password2");
 
 
 const rememberMe = document.getElementById("RememberCheck");
-rememberMe.addEventListener('change', RememberMe);
+rememberMe.addEventListener('change', checkRememberMe);
 
 
 if (localStorage.checkbox && localStorage.checkbox !== "") {
@@ -366,7 +370,7 @@ if (localStorage.checkbox && localStorage.checkbox !== "") {
     password.value = "";
 }
 
-function RememberMe() {
+function checkRememberMe() {
 
     if (rememberMe.checked && email.value !== "" && password.value !== "") {
         localStorage.email = email.value;
@@ -392,9 +396,9 @@ function checkUsername() {
 
     if (isUsernameVisible) {
         if (usernameValue === '') {
-            ErrorMsg(username, 'Username cannot be blank');
+            errorMsg(username, 'Username cannot be blank');
         } else {
-            Success(username);
+            success(username);
         }
     }
 }
@@ -403,11 +407,11 @@ function checkEmail() {
     const emailValue = email.value.trim();
 
     if (emailValue === '') {
-        ErrorMsg(email, 'Email cannot be blank');
-    } else if (!EmailRegex(emailValue)) {
-        ErrorMsg(email, 'Email is not valid');
+        errorMsg(email, 'Email cannot be blank');
+    } else if (!emailRegex(emailValue)) {
+        errorMsg(email, 'Email is not valid');
     } else {
-        Success(email);
+        success(email);
     }
 }
 
@@ -416,10 +420,10 @@ function checkPassword() {
 
     if (passwordValue === '') {
         setErrorFor(password, 'Password cannot be blank');
-    } else if (!PasswordRegex(passwordValue)) {
-        ErrorMsg(password, 'Password is not valid');
+    } else if (!passwordRegex(passwordValue)) {
+        errorMsg(password, 'Password is not valid');
     } else {
-        Success(password);
+        success(password);
     }
 }
 
@@ -430,11 +434,11 @@ function checkConfirmPassword() {
 
     if (isConfirmPasswordVisible) {
         if (confirmPasswordValue === '') {
-            ErrorMsg(confirmPassword, 'Confirm password cannot be blank');
+            errorMsg(confirmPassword, 'Confirm password cannot be blank');
         } else if (passwordValue !== confirmPasswordValue) {
-            ErrorMsg(confirmPassword, 'Passwords do not match');
+            errorMsg(confirmPassword, 'Passwords do not match');
         } else {
-            Success(confirmPassword);
+            success(confirmPassword);
         }
     }
 }
@@ -459,7 +463,7 @@ function checkInputs() {
 
 
 
-function ErrorMsg(input, message) {
+function errorMsg(input, message) {
     const formControl = input.parentElement;
     const span = formControl.querySelector('span');
 
@@ -467,15 +471,15 @@ function ErrorMsg(input, message) {
     formControl.className = 'inputArea error';
 }
 
-function Success(input) {
+function success(input) {
     const formControl = input.parentElement;
     formControl.className = 'inputArea success';
 }
 
-function EmailRegex(email) {
+function emailRegex(email) {
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 }
 
-function PasswordRegex(password) {
+function passwordRegex(password) {
     return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
 }

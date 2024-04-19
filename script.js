@@ -42,7 +42,7 @@ const addToCartBtns = document.querySelectorAll('.add-to-card');
         let isClicked = false;
 
         btn.addEventListener('click', () => {
-            // TIP ternary operator: btn.style.background = (isClicked) ? '#fff' : '#d9b99b';
+            // ternary operator: btn.style.background = (isClicked) ? '#fff' : '#d9b99b';
             if (isClicked) {
                 btn.style.background = '#fff';
             } else {
@@ -419,7 +419,7 @@ function checkPassword() {
     const passwordValue = password.value.trim();
 
     if (passwordValue === '') {
-        setErrorFor(password, 'Password cannot be blank');
+        errorMsg(password, 'Password cannot be blank');
     } else if (!passwordRegex(passwordValue)) {
         errorMsg(password, 'Password is not valid');
     } else {

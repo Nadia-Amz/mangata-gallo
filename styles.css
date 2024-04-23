@@ -1230,6 +1230,7 @@ footer img {
     border-radius: 10px;
     border: 1px solid black;
     background-color: #fff;
+    color: black;
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
@@ -1238,6 +1239,7 @@ footer img {
 }
 .item1 button:hover{
     background-color: #d9b99b;
+    color: black;
     opacity: 1;
     cursor: pointer;
 }
@@ -1741,7 +1743,6 @@ footer img {
     }
     .about a{
         font-size: 14px;
-        
     }
     .about li{
         margin-left: 1rem;
@@ -1873,7 +1874,7 @@ footer img {
     .about li{
         display: flex;
         justify-content: center;
-        margin-top: 3rem;
+        margin-top: 0rem;
     }
 
     .template img {
@@ -2056,7 +2057,7 @@ footer img {
 
     .social li {
         font-size: 1.5rem;
-        margin-right: 1rem;
+        margin-right: 0.5rem;
     }
 }
 
@@ -2395,8 +2396,10 @@ footer img {
     }
     .descPrice{
         font-size: 14px;
-        width: 50%;
         margin-right: 0;
+    }
+    .cart-item button{
+        width: 20%;
     }
 }
 

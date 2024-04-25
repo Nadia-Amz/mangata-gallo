@@ -342,6 +342,7 @@ nav ul li:hover .subnav ul li{
     border-radius: 50%;
     z-index: -1;
     transition: background-color 0.3s ease-in-out;
+    
 }
 .user:hover::before{
     background-color: #bcb5ae;

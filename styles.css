@@ -1489,6 +1489,10 @@ footer img {
     }
     .sidebar-container .Bar{
         width: 30%;
+        background-color: #fff;
+    }
+    .form-box{
+        background-color: #fff;
     }
     .humburgerIcon{
         visibility: visible;

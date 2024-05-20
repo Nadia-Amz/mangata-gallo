@@ -323,10 +323,7 @@ let passwordField = document.getElementById("passwordField");
 let title = document.getElementById("title");
 
 signinBtn.onclick = function (e) {
-    console.log('blah');
     e.preventDefault();
-    console.log('blah');
-
     field.style.maxHeight = "0";
     field.style.display = "none";
     passwordField.style.maxHeight = "0";
@@ -346,6 +343,7 @@ signupBtn.onclick = function (e) {
     signupBtn.classList.remove("disable");
     signinBtn.classList.add("disable");
 }
+
 
 /*Remember me checkbox*/
 
@@ -397,8 +395,10 @@ function checkUsername() {
     if (isUsernameVisible) {
         if (usernameValue === '') {
             errorMsg(username, 'Username cannot be blank');
+            return false;
         } else {
             success(username);
+            return true;
         }
     }
 }
@@ -408,10 +408,13 @@ function checkEmail() {
 
     if (emailValue === '') {
         errorMsg(email, 'Email cannot be blank');
+        return false;
     } else if (!emailRegex(emailValue)) {
         errorMsg(email, 'Email is not valid');
+        return false;
     } else {
         success(email);
+        return true;
     }
 }
 
@@ -420,10 +423,13 @@ function checkPassword() {
 
     if (passwordValue === '') {
         errorMsg(password, 'Password cannot be blank');
+        return false;
     } else if (!passwordRegex(passwordValue)) {
         errorMsg(password, 'Password is not valid');
+        return false;
     } else {
         success(password);
+        return true;
     }
 }
 
@@ -435,33 +441,35 @@ function checkConfirmPassword() {
     if (isConfirmPasswordVisible) {
         if (confirmPasswordValue === '') {
             errorMsg(confirmPassword, 'Confirm password cannot be blank');
+            return false;
         } else if (passwordValue !== confirmPasswordValue) {
             errorMsg(confirmPassword, 'Passwords do not match');
+            return false;
         } else {
             success(confirmPassword);
+            return true;
         }
     }
 }
 
-function checkInputs() {
-    checkUsername();
-    checkEmail();
-    checkPassword();
-    checkConfirmPassword();
+function checkInputs(e) {
+    e.preventDefault();
 
-    const isValid = true;
+    let usernameIsValid = checkUsername();
+    let emaiIsValid = checkEmail();
+    let passwordIsValid = checkPassword();
+    let confirmPasswordIsValid = checkConfirmPassword();
 
-    if (isValid) {
+    if (usernameIsValid && emaiIsValid && passwordIsValid && confirmPasswordIsValid) {
         const alertElement = document.getElementById('alert');
         alertElement.style.visibility = 'visible';
 
         setTimeout(() => {
             alertElement.style.visibility = 'hidden';
-        }, 5000);
+        },5000);
+        console.log("is valid");
     }
-}
-
-
+}document.getElementById('form').addEventListener('submit', checkInputs);
 
 function errorMsg(input, message) {
     const formControl = input.parentElement;

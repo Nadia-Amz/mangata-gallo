@@ -482,7 +482,6 @@ form{
     align-items: center;
     width: 100%;
     height: 500px;
-    
 }
 
 .inputArea span{
@@ -1374,16 +1373,16 @@ footer img {
          margin-left: 8rem;
      }
     
-    .in ion-icon{
-       margin-left: 27rem;
+    .inputArea ion-icon{
+       margin-right: 2rem;
     }
 }
 
-@media (max-width:1270px){
-    .in ion-icon{
-       margin-left: 25rem;
+/* @media (max-width:1270px){
+    .inputArea ion-icon{
+       margin-right: 25rem;
     }
-}
+} */
 
 
 @media (max-width:1234px){
@@ -1429,6 +1428,9 @@ footer img {
         width: 250px;
         height: 250px;
     }
+    .inputArea ion-icon{
+        margin-right: 4rem;
+     }
 }
 
 @media (max-width:1210px){
@@ -1438,21 +1440,15 @@ footer img {
 }
 
 @media (max-width:1170px){
-    .in ion-icon{
-       margin-left: 22rem;
-    }
+    .inputArea ion-icon{
+        margin-right: 7rem;
+     }
 }
 
-@media (max-width:1100px){
-    .in ion-icon{
-       margin-left: 20rem;
-    }
-}
-
-@media (max-width:1040px){
-    .in ion-icon{
-       margin-left: 19rem;
-    }
+@media (max-width:1060px){
+    .inputArea ion-icon{
+        margin-right: 9rem;
+     }
 }
 
 @media (max-width:1030px){
@@ -1477,9 +1473,6 @@ footer img {
     .subnav .line{
         left: 24%;
         height: 20%;
-    }
-    .in ion-icon{
-           margin-left: 17rem;
     }
 }
 
@@ -1589,21 +1582,27 @@ footer img {
             top: 10rem;
             margin-left: 8rem;
         }
+        .inputArea ion-icon{
+            margin-right: 10rem;
+         }
 }
 @media (max-width:950px){
     .about li{
         margin-left: 1rem;
         margin-right: 1rem;
     }
+    .inputArea span{
+        margin-right: 1rem;
+    }
+    .inputArea ion-icon{
+        margin-right: 11rem;
+     }
 }
 
 @media (max-width:920px){
-    .in ion-icon{
-       margin-left: 16rem;
-    }
-    .in span{
-        margin-right: 1rem;
-    }
+    .inputArea ion-icon{
+        margin-right: 12rem;
+     }
     .productsPic img {
         margin-left: 0rem;
         width: 50%;
@@ -1614,10 +1613,13 @@ footer img {
     .in{
         width: 70%; 
     }
-    .in ion-icon{
-        margin-left: 36rem;
+    .inputArea{
+        width: 70%;
     }
-    .in span{
+    .inputArea ion-icon{
+        margin-left: 47rem;
+     }
+    .inputArea span{
         margin-left: 19rem;
         width: 100%;
     }
@@ -1638,9 +1640,11 @@ footer img {
         width: 180px;
         height: 180px;
     }
-    .in ion-icon{
-        margin-left: 34rem;
-    }
+    .inputArea ion-icon{
+        margin-left: 45rem;
+     }
+    
+
 }
 
 @media (max-width:820px){
@@ -1648,24 +1652,24 @@ footer img {
         margin-left: 0rem;
         width: 40%;
     }
-    .in ion-icon{
-        margin-left: 33rem;
-    }
 }
 
 @media (max-width: 790px){
     .in{
         width: 80%; 
     }
-    .in ion-icon{
-        margin-left: 36rem;
-    }
-    .in span{
-        margin-left: 13rem;
-        width: 100%;
+    .inputArea{
+        width: 80%;
     }
     .btn-{
         width: 80%;
+    }
+    .inputArea ion-icon{
+        margin-left: 49rem;
+     }
+    .inputArea span{
+        margin-left: 13rem;
+        width: 100%;
     }
 }
 
@@ -1708,13 +1712,11 @@ footer img {
         font-size: medium;
         margin-top: 1rem;
     }
-    .in span{
-        margin-left: 11rem;
-    }
     input {
         padding: 10px 25px;
         font-size: 15px;
     }
+    
     .template img {
         width: 160px;
         height: 160px;
@@ -1753,6 +1755,10 @@ footer img {
         margin-left: 1rem;
         margin-right: 1rem;
     }
+    .inputArea ion-icon{
+        margin-left: 47rem;
+     }
+   
 }
 @media (max-width: 740px){
     .sectionTwo {
@@ -1773,10 +1779,13 @@ footer img {
     .in{
         width: 90%; 
     }
-    .in ion-icon{
-        margin-left: 39rem;
+    .inputArea{
+        width: 90%;
     }
-    .in span{
+    .inputArea ion-icon{
+        margin-left: 50rem;
+     }
+    .inputArea span{
         margin-left: 7rem;
         width: 100%;
     }
@@ -1793,9 +1802,7 @@ footer img {
     nav ul {
         padding: 5px 5px ;
     }
-    .in ion-icon{
-        margin-left: 38rem;
-    }
+    
 }
 
 @media (max-width: 692px){
@@ -1803,15 +1810,19 @@ footer img {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
-    .in ion-icon{
-        margin-left: 37rem;
+    .inputArea ion-icon{
+        margin-right: 15rem;
+     }
+    .inputArea span{
+        margin-left: 7rem;
+        width: 100%;
     }
 }
 
 @media (max-width: 662px){
-    .in ion-icon{
-        margin-left: 35rem;
-    }
+    .inputArea ion-icon{
+        margin-right: 16rem;
+     }
 }
 
 @media (max-width: 647px){
@@ -1855,24 +1866,22 @@ footer img {
         nav ul {
             max-width: 40%;
         }
-        .in ion-icon{
-            margin-left: 34rem;
-        }
+        .inputArea ion-icon{
+            margin-right: 17rem;
+         }
 }
 
 @media (max-width: 620px){
-    .in ion-icon{
-        margin-left: 32rem;
-    }
+    .inputArea ion-icon{
+        margin-right: 18rem;
+     }
 }
 
 @media (max-width: 595px){
     .sidebar-container .Bar{
         width: 100%;
     }
-    .in ion-icon{
-        margin-left: 31rem;
-    }
+
     .contactArea{
         flex-direction: column;
     }
@@ -1891,12 +1900,15 @@ footer img {
         margin-top: 0.5rem;
         margin-left: 2rem;
     }
+    .inputArea ion-icon{
+        margin-right: 19rem;
+     }
 }
 
 @media (max-width: 570px){
-    .in ion-icon{
-        margin-left: 30rem;
-    }
+    .inputArea ion-icon{
+        margin-right: 20rem;
+     }
 
     .article img{
         max-width: 50%;
@@ -1916,16 +1928,12 @@ footer img {
 }
 
 @media (max-width: 550px){
-    .in ion-icon{
-        margin-left: 28rem;
-    }
+    .inputArea ion-icon{
+        margin-right: 23rem;
+     }
 }
 
 @media (max-width: 500px){
-
-    .in ion-icon{
-        margin-left: 26rem;
-    }
     .option {
         width: 90%;
     }
@@ -1962,28 +1970,31 @@ footer img {
         max-width: 100%;
         bottom: 4rem;
     }
+    .inputArea ion-icon{
+        margin-right: 24rem;
+     }
 }
 
-@media (max-width: 475px){
-    .in ion-icon{
-        margin-left: 25rem;
-    }
+@media (max-width: 480px){
+    .inputArea ion-icon{
+        margin-right: 25rem;
+     }
     nav ul li:hover .SignWeeding{
         width: 10%;
     }
 
 }
-
-@media (max-width: 475px){
-    .in ion-icon{
-        margin-left: 23rem;
-    }
+@media (max-width: 470px){
+    .inputArea ion-icon{
+        margin-right: 27rem;
+     }
 }
 
+
 @media (max-width: 431px){
-    .in ion-icon{
-        margin-left: 22rem;
-    }
+        .inputArea ion-icon{
+            margin-right: 28rem;
+         }
     .search:hover input{
         width: 100px;
     }
@@ -2053,8 +2064,11 @@ footer img {
         width: 70%; 
         height: 29%; 
     }
-    .in ion-icon{
-        margin-left: 20rem;
+    .inputArea ion-icon{
+        margin-right: 29rem;
+    }
+    .inputArea span{
+        margin-left: 5rem;
     }
 }
 
@@ -2093,6 +2107,12 @@ footer img {
     nav ul {
         height: 80vh;
     }
+    .inputArea ion-icon{
+        margin-right: 30rem;
+    }
+    .inputArea span{
+        margin-left: 4rem;
+    }
    
 }
 
@@ -2100,6 +2120,10 @@ footer img {
     nav ul li{
         padding: 5px;
     }
+    .inputArea ion-icon{
+        margin-right: 32rem;
+    }
+   
 }
 
 @media (max-width: 370px){

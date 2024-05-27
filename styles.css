@@ -286,6 +286,7 @@ nav ul li:hover .subnav ul li{
     position: relative;
     font-size: 1.4rem;
     right: 0;
+    align-items: center;
 }
 .bnt1::before{
     content: "";
@@ -1471,7 +1472,8 @@ footer img {
 }
 
 @media (max-width: 992px){
-    .info-box{
+    .info-box,
+    .info-box p{
         display: none;
     }
     .loginPic img{

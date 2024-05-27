@@ -286,7 +286,6 @@ nav ul li:hover .subnav ul li{
     position: relative;
     font-size: 1.4rem;
     right: 0;
-    align-items: center;
 }
 .bnt1::before{
     content: "";
@@ -1415,6 +1414,10 @@ footer img {
     }
     .bnt1{
         font-size: 1.1rem;
+    }
+    .search{
+        padding: 5px 10px; 
+        margin-bottom: 0.2rem;
     }
     .search:hover input{
         width: 100px;

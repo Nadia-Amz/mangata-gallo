@@ -493,6 +493,7 @@ form{
     max-height: 60px;
     margin-right: 2rem;
     margin-top: 2.6rem;
+    margin-bottom: 1rem;
     visibility: hidden;
 }
 
@@ -832,7 +833,7 @@ label {
 }
 .info p{
     padding: 20px;
-
+    text-align: center;
 }
 .info h1{
     text-align: center;
@@ -1378,13 +1379,6 @@ footer img {
     }
 }
 
-/* @media (max-width:1270px){
-    .inputArea ion-icon{
-       margin-right: 25rem;
-    }
-} */
-
-
 @media (max-width:1234px){
     .logo img {
         display: flex;
@@ -1419,7 +1413,7 @@ footer img {
         font-size: 1.1rem;
     }
     .bnt1{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .search:hover input{
         width: 100px;
@@ -1477,6 +1471,9 @@ footer img {
 }
 
 @media (max-width: 992px){
+    .info-box{
+        display: none;
+    }
     .loginPic img{
         height: 500px;
     }
